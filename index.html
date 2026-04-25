@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Credify // Making the Impossible Possible</title>
+<meta name="description" content="Denied by banks, platforms, or direct lenders? Credify is the capital firm that approves the files no one else will. $100K minimum approval, guaranteed." />
+<meta name="theme-color" content="#000000" />
+<link rel="canonical" href="https://www.credify.io/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Credify // Making the Impossible Possible" />
+<meta property="og:description" content="The capital firm for operators denied everywhere else. $100K minimum approval, guaranteed." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Credify // Making the Impossible Possible" />
+<meta name="twitter:description" content="Denied everywhere? Credify approves the impossible. $100K minimum, guaranteed." />
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23000000'/><text x='50%25' y='58%25' text-anchor='middle' font-family='system-ui, sans-serif' font-size='36' font-weight='800' fill='%23ffffff' dominant-baseline='middle'>C</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<link rel="stylesheet" href="styles/credify.css" />
+</head>
+
+<body>
+
+<div class="noise" aria-hidden="true"></div>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- =================== NAV (morphs from bar into liquid-glass pill on scroll) =================== -->
+<header class="nav" id="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="#" class="wordmark" aria-label="Credify home">Credify</a>
+    <nav class="nav-links hidden md:flex" aria-label="Sections">
+      <div class="nav-dropdown" data-nav-dropdown>
+        <button type="button" class="nav-link nav-link--trigger" aria-haspopup="true" aria-expanded="false" aria-controls="services-menu">
+          Services
+          <svg class="nav-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 2l5 4 5-4"/></svg>
+        </button>
+        <div id="services-menu" class="nav-menu" role="menu" aria-label="Services">
+          <div class="nav-menu-shell">
+            <div class="nav-menu-core">
+              <div class="nav-menu-grid">
+                <div class="nav-menu-col">
+                  <div class="nav-menu-eyebrow">Working Capital</div>
+                  <a href="#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 11h18"/><path d="M7 15h3"/></svg>
+                    </span>
+                    <span class="nav-menu-title">Business Line of Credit</span>
+                  </a>
+                  <a href="#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="16" rx="1.5"/><path d="M6 9h8M6 13h8M6 17h5"/></svg>
+                    </span>
+                    <span class="nav-menu-title">AR Financing</span>
+                  </a>
+                  <a href="#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/></svg>
+                    </span>
+                    <span class="nav-menu-title">0% Credit Stacking</span>
+                  </a>
+                  <a href="#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                    </span>
+                    <span class="nav-menu-title">Bridge Loans</span>
+                  </a>
+                </div>
+
+                <div class="nav-menu-col">
+                  <div class="nav-menu-eyebrow">Term &amp; SBA</div>
+                  <a href="#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V10l7-4 7 4v11"/><path d="M3 10h18"/></svg>
+                    </span>
+                    <span class="nav-menu-title">SBA Loans</span>
+                  </a>
+                  <a href="#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 5-5 4 4"/><path d="M16 7h5v5"/></svg>
+                    </span>
+                    <span class="nav-menu-title">Long Term Loans</span>
+                  </a>
+                  <a href="#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l3-9 6 13 4-8 5 4"/></svg>
+                    </span>
+                    <span class="nav-menu-title">Short Term Loans</span>
+                  </a>
+                  <a href="#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v13H4z"/><path d="M9 7V4h6v3"/><path d="M4 12h16"/></svg>
+                    </span>
+                    <span class="nav-menu-title">Small Business Loans</span>
+                  </a>
+                </div>
+
+                <div class="nav-menu-col">
+                  <div class="nav-menu-eyebrow">Asset &amp; Real Estate</div>
+                  <a href="#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0 3 3l-3.5 3.5L11 9.8l3.7-3.5z"/><path d="M11 9.8l-7 7 3.2 3.2 7-7"/></svg>
+                    </span>
+                    <span class="nav-menu-title">Equipment Financing</span>
+                  </a>
+                  <a href="#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V8l7-5 7 5v13"/><path d="M5 13h14M9 21v-5h6v5"/></svg>
+                    </span>
+                    <span class="nav-menu-title">Asset Based Lending</span>
+                  </a>
+                  <a href="#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-7h6v7"/></svg>
+                    </span>
+                    <span class="nav-menu-title">Commercial Real Estate</span>
+                  </a>
+                  <a href="#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+                    </span>
+                    <span class="nav-menu-title">Personal Loans</span>
+                  </a>
+                </div>
+
+                <div class="nav-menu-help">
+                  <div class="nav-menu-help-eyebrow"><span class="pip" aria-hidden="true"></span> Not sure?</div>
+                  <h4 class="nav-menu-help-title">Let a partner pick.</h4>
+                  <p class="nav-menu-help-body">Tell us the file. We&rsquo;ll match it to the lender most likely to fund it.</p>
+                  <a href="Apply.html" class="nav-menu-help-cta">
+                    Get a custom quote
+                    <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h8"/><path d="M7.5 3l3.5 4-3.5 4"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <a href="#services" class="nav-menu-foot">
+                View all financing types
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h8"/><path d="M7.5 3l3.5 4-3.5 4"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="Solutions.html" class="nav-link">Solutions</a>
+      <a href="#process"  class="nav-link">How It Works</a>
+      <a href="#why"      class="nav-link">Why Credify</a>
+      <a href="#clients"  class="nav-link">Clients</a>
+    </nav>
+    <a href="Apply.html" class="btn btn-outline btn-compact hero-cta-main hero-cta-main--compact">
+      <span class="cta-spark" aria-hidden="true"></span>
+      Get Started
+      <span class="btn-icon" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8"/><path d="M7.5 3l3.5 4-3.5 4"/></svg>
+      </span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- =================== HERO =================== -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="hero-bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=2400&auto=format&fit=crop" alt="" loading="eager" />
+  </div>
+  <div class="hero-overlay-h" aria-hidden="true"></div>
+  <div class="hero-mesh" aria-hidden="true"></div>
+  <div class="hero-overlay-b" aria-hidden="true"></div>
+
+  <div class="wrap" style="position:relative; z-index:3;">
+    <div class="hero-inner">
+      <span class="badge reveal">
+        <span class="pip" aria-hidden="true"></span>
+        Denied Elsewhere &middot; $100K Minimum Approval &middot; Guaranteed
+      </span>
+
+      <h1 id="hero-h1" class="hero-h1 reveal">
+        Making the <em>impossible</em><br />possible.
+      </h1>
+
+      <p class="hero-sub reveal">
+        1,280 files banks said no to. 1,280 we said yes to. $840M placed. $100K minimum approval, guaranteed.
+      </p>
+
+      <div class="hero-ctas reveal">
+        <a href="Apply.html" class="btn btn-outline btn-hero hero-cta-main">
+          <span class="cta-spark" aria-hidden="true"></span>
+          Get Your Custom Quote
+          <span class="btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10"/><path d="M9 3l4 5-4 5"/></svg>
+          </span>
+        </a>
+        <p class="cta-microcopy" aria-hidden="false">
+          <span class="cta-pip" aria-hidden="true"></span>
+          60-second reply &middot; No credit pull &middot; $100K minimum, guaranteed
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== WHY =================== -->
+<section id="why" class="sec" aria-labelledby="why-h2">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow-pill"><span class="pip" aria-hidden="true"></span> Track Record</span>
+        <h2 id="why-h2" class="sec-h2">Approved where <em>others</em> denied you.</h2>
+      </div>
+      <p class="sub">
+        Banks underwrite by credit score. Platforms underwrite by template. Direct lenders won't touch complex files. We read the actual business, match it to the right lender, and fund it.
+      </p>
+    </div>
+
+    <div class="stat-tray reveal">
+      <div class="stat-row">
+        <div class="stat-cell">
+          <div class="stat-fig tnum">$100K</div>
+          <span class="stat-label">Minimum approval</span>
+          <p class="stat-desc">Every accepted file starts here. We only take files we know we can place.</p>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-fig tnum">$840M+</div>
+          <span class="stat-label">Capital delivered</span>
+          <p class="stat-desc">Placed across 1,280 operators denied elsewhere first.</p>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-fig tnum">99%</div>
+          <span class="stat-label">Approval rate</span>
+          <p class="stat-desc">Of accepted files close at the quoted terms. We vet the lender before we vet you.</p>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-fig tnum">100+</div>
+          <span class="stat-label">Capital partners</span>
+          <p class="stat-desc">Private lenders who underwrite the files banks won't.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== WHY CREDIFY (comparison) =================== -->
+<section id="why-credify" class="sec" aria-labelledby="why-credify-h2">
+  <div class="wrap">
+    <div class="sec-head-center reveal">
+      <span class="eyebrow-pill"><span class="pip" aria-hidden="true"></span> Why Credify</span>
+      <h2 id="why-credify-h2" class="path-h2">Built for deals banks <em>won't</em> touch.</h2>
+      <p class="sec-sub-center">How we stack up against every lender that already said no.</p>
+    </div>
+
+    <div class="compare-shell reveal">
+      <div class="compare-card">
+        <div class="compare-row head">
+          <div class="compare-cell label" aria-hidden="true"></div>
+          <div class="compare-cell"><span class="col-hdr">Banks &amp; Platforms</span></div>
+          <div class="compare-cell credify"><span class="col-hdr credify">Credify</span></div>
+        </div>
+
+        <div class="compare-row">
+          <div class="compare-cell label">Time to Fund</div>
+          <div class="compare-cell value muted">30&ndash;90 days</div>
+          <div class="compare-cell value credify"><span class="highlight">24 hrs &ndash; 6 days</span></div>
+        </div>
+
+        <div class="compare-row">
+          <div class="compare-cell label">Application</div>
+          <div class="compare-cell value muted">2&ndash;3 hours</div>
+          <div class="compare-cell value credify"><span class="highlight">Under 4 minutes</span></div>
+        </div>
+
+        <div class="compare-row">
+          <div class="compare-cell label">Capital Sources</div>
+          <div class="compare-cell value muted">5&ndash;10 products</div>
+          <div class="compare-cell value credify">100+ private partners</div>
+        </div>
+
+        <div class="compare-row">
+          <div class="compare-cell label">Dedicated Strategist</div>
+          <div class="compare-cell value muted">
+            <span class="mark x" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </span>
+            <span class="sr-only">No</span>
+          </div>
+          <div class="compare-cell value credify">
+            <span class="mark check" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>
+            </span>
+            <span class="sr-only">Yes</span>
+          </div>
+        </div>
+
+        <div class="compare-row">
+          <div class="compare-cell label">Credit Requirement</div>
+          <div class="compare-cell value muted">700+ FICO</div>
+          <div class="compare-cell value credify">No minimum floor</div>
+        </div>
+
+        <div class="compare-row">
+          <div class="compare-cell label">Approval Guarantee</div>
+          <div class="compare-cell value muted">
+            <span class="mark x" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </span>
+            <span class="sr-only">No</span>
+          </div>
+          <div class="compare-cell value credify"><span class="highlight">$100K minimum</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PROCESS (horizontal timeline) =================== -->
+<section id="process" class="sec" aria-labelledby="process-h2">
+  <div class="wrap">
+    <div class="sec-head-center reveal">
+      <span class="eyebrow-pill"><span class="pip" aria-hidden="true"></span> How It Works</span>
+      <h2 id="process-h2" class="path-h2">Your path from <em>denied</em> to funded.</h2>
+    </div>
+
+    <ol class="path">
+      <li class="path-step reveal">
+        <div class="path-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="18" rx="2"/><rect x="9" y="2" width="6" height="4" rx="1"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="13" y2="15"/></svg>
+        </div>
+        <h3 class="path-title">Submit Your File</h3>
+        <p class="path-body">Send what you have. Tax returns, denial letters, bank statements. Fifteen minutes. No pitch decks.</p>
+      </li>
+      <li class="path-step reveal">
+        <div class="path-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        </div>
+        <h3 class="path-title">Strategy Call</h3>
+        <p class="path-body">A Credify partner maps a path through the denials. We know which lenders fund which files.</p>
+      </li>
+      <li class="path-step reveal">
+        <div class="path-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><polyline points="17 11 19 13 23 9"/></svg>
+        </div>
+        <h3 class="path-title">Matched to a Lender</h3>
+        <p class="path-body">We route your file to the partner most likely to close. No spray-and-pray. One match.</p>
+      </li>
+      <li class="path-step reveal">
+        <div class="path-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5h-3.5a1.5 1.5 0 0 0 0 3h2a1.5 1.5 0 0 1 0 3h-3.5"/><line x1="12" y1="7" x2="12" y2="9.5"/><line x1="12" y1="15.5" x2="12" y2="17"/></svg>
+        </div>
+        <h3 class="path-title">Funded</h3>
+        <p class="path-body">Wire hits your account. $100K minimum, guaranteed. Your partner stays on through year-end.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- =================== SERVICES =================== -->
+<section id="services" class="sec" aria-labelledby="services-h2">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow-pill"><span class="pip" aria-hidden="true"></span> Services</span>
+        <h2 id="services-h2" class="sec-h2">Twelve ways to make it <em>possible.</em></h2>
+      </div>
+      <p class="sub">
+        Whatever shape the file's in, we have the instrument that fits. Every approval starts at $100K. Guaranteed.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card card-flag reveal">
+        <div class="card-shell"><div class="card-core">
+          <div class="card-eyebrow">Flagship &middot; $100K to $10M</div>
+          <h3>Working Capital Lines</h3>
+          <p>Revolving credit priced to your actual cash flow, not your credit score. Draw on demand, repay as revenue clears. For operators banks call &ldquo;too volatile&rdquo; and platforms call &ldquo;too complex.&rdquo;</p>
+          <div class="card-foot">
+            <span class="spec">12 to 36 mo &middot; revolving</span>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-shell"><div class="card-core">
+          <div class="card-eyebrow">Instrument II</div>
+          <h3>Term Loans</h3>
+          <p>Fixed amortization for operators building balance sheets banks can&rsquo;t read yet. No prepayment penalties.</p>
+          <div class="card-foot">
+            <span class="spec">12 to 60 mo</span>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-shell"><div class="card-core">
+          <div class="card-eyebrow">Instrument III</div>
+          <h3>Bridge Loans</h3>
+          <p>Same-week capital for closings that can&rsquo;t wait four weeks on a bank&rsquo;s schedule.</p>
+          <div class="card-foot">
+            <span class="spec">Same week</span>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-shell"><div class="card-core">
+          <div class="card-eyebrow">Instrument IV</div>
+          <h3>Equipment &amp; Asset Finance</h3>
+          <p>Collateralized placements when liquid capital is tight and the machine still has to be on the floor Monday.</p>
+          <div class="card-foot">
+            <span class="spec">Collateralized</span>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-shell"><div class="card-core">
+          <div class="card-eyebrow">Instrument V</div>
+          <h3>Commercial Real Estate</h3>
+          <p>Senior and mezzanine structures for properties banks flag as &ldquo;complex.&rdquo; Underwritten by the asset, not the algorithm.</p>
+          <div class="card-foot">
+            <span class="spec">Senior / Mezz</span>
+          </div>
+        </div></div>
+      </article>
+    </div>
+
+    <!-- Full instrument shelf - all 12 products in icon+name rows -->
+    <div class="instrument-shelf reveal">
+      <div class="instrument-shelf-head">
+        <span class="instrument-shelf-eyebrow">The full shelf</span>
+        <span class="instrument-shelf-rule" aria-hidden="true"></span>
+        <span class="instrument-shelf-meta">12 instruments &middot; one desk</span>
+      </div>
+      <div class="instrument-shelf-grid">
+        <a href="#apply" class="instrument-row">
+          <span class="instrument-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 11h18"/><path d="M7 15h3"/></svg>
+          </span>
+          <span class="instrument-row-name">Business Line of Credit</span>
+        </a>
+        <a href="#apply" class="instrument-row">
+          <span class="instrument-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="16" rx="1.5"/><path d="M6 9h8M6 13h8M6 17h5"/><path d="M19 9l2 1v9l-2 1"/></svg>
+          </span>
+          <span class="instrument-row-name">Accounts Receivable Financing</span>
+        </a>
+        <a href="#apply" class="instrument-row">
+          <span class="instrument-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0 3 3l-3.5 3.5L11 9.8l3.7-3.5z"/><path d="M11 9.8l-7 7 3.2 3.2 7-7"/></svg>
+          </span>
+          <span class="instrument-row-name">Equipment Financing</span>
+        </a>
+        <a href="#apply" class="instrument-row">
+          <span class="instrument-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg>
+          </span>
+          <span class="instrument-row-name">0% Credit Stacking</span>
+        </a>
+        <a href="#apply" class="instrument-row">
+          <span class="instrument-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V8l7-5 7 5v13"/><path d="M5 13h14M9 21v-5h6v5"/></svg>
+          </span>
+          <span class="instrument-row-name">Asset Based Lending</span>
+        </a>
+        <a href="#apply" class="instrument-row">
+          <span class="instrument-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V10l7-4 7 4v11"/><path d="M9 21v-6M15 21v-6"/><path d="M3 10h18"/></svg>
+          </span>
+          <span class="instrument-row-name">SBA Loans</span>
+        </a>
+        <a href="#apply" class="instrument-row">
+          <span class="instrument-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-7h6v7"/></svg>
+          </span>
+          <span class="instrument-row-name">Commercial Real Estate</span>
+        </a>
+        <a href="#apply" class="instrument-row">
+          <span class="instrument-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h12l-3-3M20 17H8l3 3"/></svg>
+          </span>
+          <span class="instrument-row-name">Bridge Loans</span>
+        </a>
+        <a href="#apply" class="instrument-row">
+          <span class="instrument-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v13H4z"/><path d="M9 7V4h6v3"/><path d="M4 12h16"/></svg>
+          </span>
+          <span class="instrument-row-name">Small Business Loans</span>
+        </a>
+        <a href="#apply" class="instrument-row">
+          <span class="instrument-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 5-5 4 4"/><path d="M16 7h5v5"/></svg>
+          </span>
+          <span class="instrument-row-name">Long Term Business Loans</span>
+        </a>
+        <a href="#apply" class="instrument-row">
+          <span class="instrument-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+          </span>
+          <span class="instrument-row-name">Personal Loans</span>
+        </a>
+        <a href="#apply" class="instrument-row">
+          <span class="instrument-row-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </span>
+          <span class="instrument-row-name">Short Term Business Loans</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PARTNERS =================== -->
+<section class="partners" aria-label="Capital partners">
+  <div class="partners-header">
+    <span class="eyebrow-pill" style="margin-bottom:0;"><span class="pip" aria-hidden="true"></span> Capital Partners</span>
+  </div>
+  <div class="partners-rail" aria-hidden="true">
+    <span>Goldman &amp; West</span><span class="dot">/</span>
+    <span>Ashford Capital</span><span class="dot">/</span>
+    <span>Meridian Trust</span><span class="dot">/</span>
+    <span>Kingsbury Credit</span><span class="dot">/</span>
+    <span>Aurelius Private</span><span class="dot">/</span>
+    <span>Halstead Partners</span><span class="dot">/</span>
+    <span>Whitcomb &amp; Vane</span><span class="dot">/</span>
+    <span>Stratham Holdings</span><span class="dot">/</span>
+    <span>Ellington Reserve</span><span class="dot">/</span>
+    <span>Pembroke Credit</span><span class="dot">/</span>
+    <span>Goldman &amp; West</span><span class="dot">/</span>
+    <span>Ashford Capital</span><span class="dot">/</span>
+    <span>Meridian Trust</span><span class="dot">/</span>
+    <span>Kingsbury Credit</span><span class="dot">/</span>
+    <span>Aurelius Private</span><span class="dot">/</span>
+    <span>Halstead Partners</span><span class="dot">/</span>
+    <span>Whitcomb &amp; Vane</span><span class="dot">/</span>
+    <span>Stratham Holdings</span><span class="dot">/</span>
+    <span>Ellington Reserve</span><span class="dot">/</span>
+    <span>Pembroke Credit</span><span class="dot">/</span>
+  </div>
+</section>
+
+<!-- =================== CLIENTS =================== -->
+<section id="clients" class="sec" aria-labelledby="clients-h2">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow-pill"><span class="pip" aria-hidden="true"></span> Clarity</span>
+        <h2 id="clients-h2" class="sec-h2">From <em>no</em> to funded.</h2>
+      </div>
+      <p class="sub">
+        1,280 operators denied elsewhere. 1,280 Credify closes. Three of them, in their own words.
+      </p>
+    </div>
+
+    <div class="carousel">
+      <article class="quote-card reveal">
+        <div class="quote-shell"><div class="quote-core">
+          <div class="quote-top">
+            <div class="initial" aria-hidden="true">M</div>
+            <div>
+              <div class="client-name">Margaux Ellingsworth</div>
+              <div class="client-role">Founder, House of Ellingsworth</div>
+            </div>
+          </div>
+          <p class="quote-body">Four banks passed. Two platforms timed us out. Credify closed a $400K working capital line in 11 days. I can actually run my business now.</p>
+          <div class="quote-stars" aria-label="Five stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+        </div></div>
+      </article>
+      <article class="quote-card reveal">
+        <div class="quote-shell"><div class="quote-core">
+          <div class="quote-top">
+            <div class="initial" aria-hidden="true">T</div>
+            <div>
+              <div class="client-name">Theo Marchand</div>
+              <div class="client-role">Principal, Marchand &amp; Co.</div>
+            </div>
+          </div>
+          <p class="quote-body">We needed $1.2M by Friday. Our bank said three weeks. Credify said Tuesday. Wire hit the account Friday morning. No drama.</p>
+          <div class="quote-stars" aria-label="Five stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+        </div></div>
+      </article>
+      <article class="quote-card reveal">
+        <div class="quote-shell"><div class="quote-core">
+          <div class="quote-top">
+            <div class="initial" aria-hidden="true">I</div>
+            <div>
+              <div class="client-name">Isolde Vance</div>
+              <div class="client-role">Operator, Vance Holdings</div>
+            </div>
+          </div>
+          <p class="quote-body">Two banks said our cash flow was &ldquo;too seasonal.&rdquo; Credify read our real ledger, found the lender who understood it, and funded $750K at terms that actually work.</p>
+          <div class="quote-stars" aria-label="Five stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+        </div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CALCULATOR =================== -->
+<section id="calculator" class="sec" aria-labelledby="calc-h2">
+  <div class="wrap">
+    <div class="sec-head-center reveal">
+      <span class="eyebrow-pill"><span class="pip" aria-hidden="true"></span> Check Your Options</span>
+      <h2 id="calc-h2" class="path-h2">How much funding can you <em>qualify</em> for?</h2>
+      <p class="calc-sub">Tell us about your business and see what products you may be eligible for.</p>
+    </div>
+
+    <div class="calc-disclaimer reveal">
+      <strong>Disclaimer:</strong> The estimates provided by this tool are for informational and illustrative purposes only and do not constitute a loan offer, pre-approval, or guarantee of funding. Actual qualification, loan amounts, interest rates, terms, and eligibility vary significantly based on the lender, specific lending product, your credit history, business financials, collateral, industry risk, and other underwriting criteria. Results should not be relied upon as financial advice. Please <a href="mailto:Fund@getcredify.io?subject=Credify%20%2F%2F%20Inquiry">submit an inquiry</a> to receive a personalized assessment from one of our funding partners.
+    </div>
+
+    <div class="calc-grid">
+      <div class="calc-inputs reveal">
+        <div class="calc-field">
+          <div class="calc-field-head">
+            <label for="calc-revenue">Monthly Revenue</label>
+            <span class="calc-value tnum" data-target="revenue">$30,000</span>
+          </div>
+          <input type="range" id="calc-revenue" class="calc-slider" min="5000" max="200000" step="1000" value="30000" />
+          <div class="calc-range-labels"><span>$5,000</span><span>$200,000</span></div>
+        </div>
+
+        <div class="calc-field">
+          <div class="calc-field-head">
+            <label for="calc-credit">Credit Score</label>
+            <span class="calc-value tnum" data-target="credit">680</span>
+          </div>
+          <input type="range" id="calc-credit" class="calc-slider" min="500" max="800" step="5" value="680" />
+          <div class="calc-range-labels"><span>500</span><span>800</span></div>
+        </div>
+
+        <div class="calc-field">
+          <label for="calc-industry">Industry</label>
+          <select id="calc-industry" class="calc-select">
+            <option>Construction</option>
+            <option>Real Estate</option>
+            <option>Automotive</option>
+            <option>Finance &amp; Insurance</option>
+            <option>Healthcare</option>
+            <option>Retail</option>
+            <option>Restaurant / Food Service</option>
+            <option>Technology</option>
+            <option>Professional Services</option>
+            <option>Transportation</option>
+            <option>Manufacturing</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="calc-field">
+          <label>Time in Business</label>
+          <div class="calc-pills" role="group" aria-label="Time in Business" data-target="time">
+            <button type="button" class="calc-pill" data-value="&lt; 6 mo">&lt; 6 mo</button>
+            <button type="button" class="calc-pill" data-value="6-12 mo">6-12 mo</button>
+            <button type="button" class="calc-pill is-active" data-value="1-3 yr">1-3 yr</button>
+            <button type="button" class="calc-pill" data-value="3+ yr">3+ yr</button>
+          </div>
+        </div>
+
+        <div class="calc-field">
+          <label>Business Type</label>
+          <div class="calc-pills" role="group" aria-label="Business Type" data-target="type">
+            <button type="button" class="calc-pill is-active" data-value="LLC">LLC</button>
+            <button type="button" class="calc-pill" data-value="S-Corp">S-Corp</button>
+            <button type="button" class="calc-pill" data-value="C-Corp">C-Corp</button>
+            <button type="button" class="calc-pill" data-value="Sole Prop">Sole Prop</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-result reveal">
+        <div class="calc-result-core">
+          <div>
+            <div class="calc-total-label">Estimated Total Funding</div>
+            <div class="calc-total tnum" data-out="total">$128,000</div>
+          </div>
+
+          <div>
+            <div class="calc-breakdown-label">Product Breakdown</div>
+            <ul class="calc-breakdown">
+              <li class="calc-row" data-row="revBased">
+                <span class="calc-row-label">
+                  <svg class="calc-row-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 10A10 10 0 1 1 17 3.3"/><path d="m9 11 3 3 10-10"/></svg>
+                  Revenue-Based Financing
+                </span>
+                <span class="calc-row-amount tnum" data-out="revBased">$14,000</span>
+              </li>
+              <li class="calc-row" data-row="loc">
+                <span class="calc-row-label">
+                  <svg class="calc-row-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 10A10 10 0 1 1 17 3.3"/><path d="m9 11 3 3 10-10"/></svg>
+                  Business Line of Credit
+                </span>
+                <span class="calc-row-amount tnum" data-out="loc">$21,500</span>
+              </li>
+              <li class="calc-row" data-row="term">
+                <span class="calc-row-label">
+                  <svg class="calc-row-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 10A10 10 0 1 1 17 3.3"/><path d="m9 11 3 3 10-10"/></svg>
+                  Term Loan
+                </span>
+                <span class="calc-row-amount tnum" data-out="term">$32,500</span>
+              </li>
+              <li class="calc-row" data-row="sba">
+                <span class="calc-row-label">
+                  <svg class="calc-row-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 10A10 10 0 1 1 17 3.3"/><path d="m9 11 3 3 10-10"/></svg>
+                  SBA 7(a) Loan
+                </span>
+                <span class="calc-row-amount tnum" data-out="sba">$43,000</span>
+              </li>
+              <li class="calc-row" data-row="asset">
+                <span class="calc-row-label">
+                  <svg class="calc-row-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 10A10 10 0 1 1 17 3.3"/><path d="m9 11 3 3 10-10"/></svg>
+                  Asset-Based Loan
+                </span>
+                <span class="calc-row-amount tnum" data-out="asset">$17,000</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="Apply.html" class="btn btn-outline btn-default calc-cta hero-cta-main">
+            <span class="cta-spark" aria-hidden="true"></span>
+            Get Your Custom Quote
+            <span class="btn-icon" aria-hidden="true">
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8"/><path d="M7.5 3l3.5 4-3.5 4"/></svg>
+            </span>
+          </a>
+
+          <p class="calc-fine">These estimates are for illustrative purposes only and do not constitute a loan offer or guarantee. Actual amounts, rates, and eligibility vary by lender, product, creditworthiness, and other factors. Not financial advice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== APPLY (Impruvu-style full-bleed banner) =================== -->
+<section id="apply" class="apply-banner" aria-labelledby="apply-h2">
+  <div class="apply-banner-bg" aria-hidden="true"></div>
+  <div class="apply-banner-inner reveal">
+    <span class="eyebrow-pill apply-banner-eyebrow"><span class="pip" aria-hidden="true"></span> Apply</span>
+    <h2 id="apply-h2" class="apply-banner-h2">Ready to turn <em>no</em> into yes?</h2>
+    <p class="apply-banner-sub">
+      One file. One partner. One last call before you give up. $100K minimum approval, guaranteed. If you haven&rsquo;t been turned down by at least one bank or platform, try them first. We&rsquo;re built for what comes after.
+    </p>
+    <a href="Apply.html" class="btn btn-outline btn-hero hero-cta-main apply-banner-cta">
+      <span class="cta-spark" aria-hidden="true"></span>
+      Start Your Application
+      <span class="btn-icon" aria-hidden="true">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10"/><path d="M9 3l4 5-4 5"/></svg>
+      </span>
+    </a>
+    <p class="cta-microcopy apply-banner-microcopy">
+      <span class="cta-pip" aria-hidden="true"></span>
+      60-second reply &middot; No credit pull &middot; $100K minimum, guaranteed
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer-stage">
+  <div class="footer-mark-bg" aria-hidden="true">
+    <span class="footer-mark-glow"></span>
+    <span class="footer-mark-text">Credify</span>
+  </div>
+  <div class="wrap footer-stage-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="wordmark" style="font-size:24px;">Credify</div>
+        <p class="footer-tagline">Making the impossible possible. $100K minimum approval, guaranteed. The capital firm for operators denied everywhere else.</p>
+        <span class="footer-status"><span class="footer-pip" aria-hidden="true"></span> Desk Open &middot; Replying Now</span>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Company</div>
+        <a href="#services" class="footer-link">Services</a>
+        <a href="Solutions.html" class="footer-link">Solutions</a>
+        <a href="#process"  class="footer-link">How It Works</a>
+        <a href="#why"      class="footer-link">Why Credify</a>
+        <a href="#clients"  class="footer-link">Clients</a>
+      </div>
+      <div class="footer-col footer-col--services-wide">
+        <div class="footer-col-label">Services</div>
+        <div class="footer-link-grid">
+          <a href="#services" class="footer-link">Business Line of Credit</a>
+          <a href="#services" class="footer-link">SBA Loans</a>
+          <a href="#services" class="footer-link">Equipment Financing</a>
+          <a href="#services" class="footer-link">Bridge Loans</a>
+          <a href="#services" class="footer-link">Commercial Real Estate</a>
+          <a href="#services" class="footer-link">AR Financing</a>
+          <a href="#services" class="footer-link">Asset Based Lending</a>
+          <a href="#services" class="footer-link">View all 12 instruments</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Connect</div>
+        <a href="mailto:Fund@getcredify.io" class="footer-link">Fund@getcredify.io</a>
+        <a href="Apply.html" class="footer-link">Start Application</a>
+        <a href="Apply.html" class="footer-link">Get Custom Quote</a>
+      </div>
+    </div>
+
+    <div class="footer-rule"></div>
+
+    <div class="flex items-center justify-between footer-fine" style="gap:20px; flex-wrap:wrap;">
+      <span>&copy; MMXXVI Credify / Fund@getcredify.io</span>
+      <span>Credify is a capital advisory desk. Not a direct lender.</span>
+    </div>
+  </div>
+</footer>
+
+<noscript>
+  <div style="padding:24px; background:var(--surface-1); color:var(--fg-80); font-family:var(--font-sans); font-size:13px; text-align:center; border-top:1px solid var(--border);">
+    Credify. Making the impossible possible. The capital firm for operators denied everywhere else. $100K minimum approval, guaranteed. Contact Fund@getcredify.io
+  </div>
+</noscript>
+
+<script>
+  (function(){
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ---------- Services dropdown (click toggle, hover-to-open, outside-click + Esc to close) ----------
+    document.querySelectorAll('[data-nav-dropdown]').forEach(dd => {
+      const trigger = dd.querySelector('.nav-link--trigger');
+      const menu = dd.querySelector('.nav-menu');
+      if (!trigger || !menu) return;
+
+      let hoverTimer = null;
+      const open = () => {
+        dd.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      };
+      const close = () => {
+        dd.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      };
+      const toggle = () => {
+        if (dd.classList.contains('is-open')) close(); else open();
+      };
+
+      // Click toggles
+      trigger.addEventListener('click', (e) => { e.preventDefault(); toggle(); });
+
+      // Hover-to-open with intent delay; close on leave with delay so users can move
+      // diagonally from trigger into menu without it snapping shut.
+      dd.addEventListener('mouseenter', () => {
+        clearTimeout(hoverTimer);
+        hoverTimer = setTimeout(open, 90);
+      });
+      dd.addEventListener('mouseleave', () => {
+        clearTimeout(hoverTimer);
+        hoverTimer = setTimeout(close, 180);
+      });
+
+      // Outside click
+      document.addEventListener('click', (e) => {
+        if (!dd.contains(e.target)) close();
+      });
+
+      // Esc closes + restores focus to trigger
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && dd.classList.contains('is-open')) {
+          close();
+          trigger.focus();
+        }
+      });
+
+      // Clicking any menu item closes the dropdown
+      menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', close);
+      });
+    });
+
+    // ---------- Morphing nav (bar → liquid-glass pill) ----------
+    const navEl = document.getElementById('nav');
+    if (navEl) {
+      const threshold = 80;
+      let ticking = false;
+      const updateNav = () => {
+        if (window.scrollY > threshold) navEl.classList.add('is-stuck');
+        else navEl.classList.remove('is-stuck');
+        ticking = false;
+      };
+      window.addEventListener('scroll', () => {
+        if (!ticking) { window.requestAnimationFrame(updateNav); ticking = true; }
+      }, { passive: true });
+      updateNav();
+    }
+
+    // ---------- IntersectionObserver reveal (blur + translate, cubic-bezier via CSS) ----------
+    const reveals = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      reveals.forEach(el => el.classList.add('is-in'));
+    } else {
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            // Stagger siblings inside the same group
+            const parent = entry.target.parentElement;
+            const siblings = parent ? Array.from(parent.querySelectorAll(':scope > .reveal')) : [];
+            const idx = siblings.indexOf(entry.target);
+            const delay = Math.max(0, idx) * 80;
+            setTimeout(() => entry.target.classList.add('is-in'), delay);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+      reveals.forEach(el => io.observe(el));
+    }
+
+    // ---------- Calculator (eligibility tool) ----------
+    (function initCalculator() {
+      const calc = document.getElementById('calculator');
+      if (!calc) return;
+
+      const state = {
+        revenue: 30000,
+        creditScore: 680,
+        industry: 'Construction',
+        timeInBusiness: '1-3 yr',
+        bizType: 'LLC',
+      };
+      const TIME_FACTOR = { '< 6 mo': 0.3, '6-12 mo': 0.6, '1-3 yr': 0.9, '3+ yr': 1.0 };
+      const TYPE_FACTOR = { 'LLC': 1.0, 'S-Corp': 1.05, 'C-Corp': 1.1, 'Sole Prop': 0.85 };
+      const PRODUCT_LABELS = {
+        revBased: 'Revenue-Based Financing',
+        loc: 'Business Line of Credit',
+        term: 'Term Loan',
+        sba: 'SBA 7(a) Loan',
+        asset: 'Asset-Based Loan',
+      };
+
+      const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+
+      function compute() {
+        const revFactor = state.revenue / 30000;
+        const creditFactor = Math.max(0, (state.creditScore - 500) / 300);
+        const tf = TIME_FACTOR[state.timeInBusiness] || 0.9;
+        const xf = TYPE_FACTOR[state.bizType] || 1.0;
+        const base = 118500 * revFactor * (0.5 + 0.5 * creditFactor) * tf * xf;
+        const revBased = Math.round(base * 0.165 / 500) * 500;
+        const loc      = Math.round(base * 0.253 / 500) * 500;
+        const term     = Math.round(base * 0.38  / 500) * 500;
+        const sba      = (state.creditScore >= 650 && tf >= 0.9) ? Math.round(base * 0.5 / 1000) * 1000 : 0;
+        const asset    = Math.round(base * 0.2  / 500) * 500;
+        return { revBased, loc, term, sba, asset, total: revBased + loc + term + sba + asset };
+      }
+
+      function paintSlider(input) {
+        const min = +input.min, max = +input.max, val = +input.value;
+        const pct = ((val - min) / (max - min)) * 100;
+        input.style.background =
+          'linear-gradient(to right, var(--emerald) 0%, var(--emerald) ' + pct + '%, ' +
+          'rgba(255,255,255,0.10) ' + pct + '%, rgba(255,255,255,0.10) 100%)';
+      }
+
+      function update() {
+        const r = compute();
+        calc.querySelector('[data-out="total"]').textContent = fmt(r.total);
+        Object.keys(PRODUCT_LABELS).forEach((k) => {
+          const row = calc.querySelector('[data-row="' + k + '"]');
+          if (!row) return;
+          const amt = row.querySelector('[data-out]');
+          const v = r[k];
+          if (v > 0) {
+            row.classList.remove('is-off');
+            amt.textContent = fmt(v);
+          } else {
+            row.classList.add('is-off');
+            amt.textContent = 'Not eligible';
+          }
+        });
+      }
+
+      const revSlider = calc.querySelector('#calc-revenue');
+      const credSlider = calc.querySelector('#calc-credit');
+      const indSelect = calc.querySelector('#calc-industry');
+
+      revSlider.addEventListener('input', () => {
+        state.revenue = +revSlider.value;
+        calc.querySelector('[data-target="revenue"]').textContent = fmt(state.revenue);
+        paintSlider(revSlider);
+        update();
+      });
+      credSlider.addEventListener('input', () => {
+        state.creditScore = +credSlider.value;
+        calc.querySelector('[data-target="credit"]').textContent = state.creditScore;
+        paintSlider(credSlider);
+        update();
+      });
+      indSelect.addEventListener('change', (e) => { state.industry = e.target.value; update(); });
+
+      calc.querySelectorAll('.calc-pills').forEach((group) => {
+        const target = group.dataset.target;
+        group.addEventListener('click', (e) => {
+          const btn = e.target.closest('.calc-pill');
+          if (!btn) return;
+          group.querySelectorAll('.calc-pill').forEach((b) => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          const value = btn.dataset.value;
+          if (target === 'time') state.timeInBusiness = value;
+          else if (target === 'type') state.bizType = value;
+          update();
+        });
+      });
+
+      paintSlider(revSlider);
+      paintSlider(credSlider);
+      update();
+    })();
+
+    // ---------- Process image parallax (keeps GSAP if present, otherwise skip) ----------
+    if (!reduce && window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+      const pImg = document.querySelector('.process-image img');
+      const pList = document.querySelector('.step-list');
+      if (pImg && pList && window.innerWidth > 960) {
+        gsap.to(pImg, {
+          yPercent: -6, ease: 'none',
+          scrollTrigger: { trigger: pList, start: 'top 80%', end: 'bottom 20%', scrub: 0.6 }
+        });
+      }
+    }
+    // ---------- Stats: count up on view ----------
+    const statFigs = document.querySelectorAll('.stat-fig');
+    if (statFigs.length && !reduce && 'IntersectionObserver' in window) {
+      const parseStat = (text) => {
+        const m = text.match(/^(\$?)(\d+(?:\.\d+)?)([KMB]?\+?)$/);
+        if (!m) return null;
+        return { prefix: m[1], num: parseFloat(m[2]), suffix: m[3], original: text };
+      };
+      const formatStat = (parsed, value) => {
+        const rounded = parsed.num >= 100 ? Math.round(value) : Math.round(value * 10) / 10;
+        return parsed.prefix + rounded + parsed.suffix;
+      };
+      const animate = (el, parsed) => {
+        const dur = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const t = Math.min(1, (now - start) / dur);
+          // easeOutCubic
+          const eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = formatStat(parsed, parsed.num * eased);
+          if (t < 1) requestAnimationFrame(tick);
+          else el.textContent = parsed.original;
+        };
+        requestAnimationFrame(tick);
+      };
+      const sio = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const parsed = parseStat(el.textContent.trim());
+          if (parsed) animate(el, parsed);
+          obs.unobserve(el);
+        });
+      }, { threshold: 0.4 });
+      statFigs.forEach((el) => sio.observe(el));
+    }
+
+    // ---------- Process timeline: animate connector when in view ----------
+    const pathEl = document.querySelector('.path');
+    if (pathEl) {
+      if (reduce || !('IntersectionObserver' in window)) {
+        pathEl.classList.add('is-drawn');
+      } else {
+        const pio = new IntersectionObserver((entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              pathEl.classList.add('is-drawn');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        pio.observe(pathEl);
+      }
+    }
+
+    // ---------- Calc total: emerald flash on value change ----------
+    const totalEl = document.querySelector('[data-out="total"]');
+    if (totalEl) {
+      let flashTimer = null;
+      let lastValue = totalEl.textContent;
+      const obs = new MutationObserver(() => {
+        if (totalEl.textContent === lastValue) return;
+        lastValue = totalEl.textContent;
+        totalEl.classList.add('is-flashing');
+        clearTimeout(flashTimer);
+        flashTimer = setTimeout(() => totalEl.classList.remove('is-flashing'), 480);
+      });
+      obs.observe(totalEl, { childList: true, characterData: true, subtree: true });
+    }
+  })();
+</script>
+
+</body>
+</html>

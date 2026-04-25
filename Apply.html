@@ -1,0 +1,1372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Credify // Book a Strategy Call: See if we can help</title>
+<meta name="description" content="Book a 20-minute strategy call with our desk. We will review your situation and tell you straight whether we can help. No credit pull, no commitment." />
+<meta name="theme-color" content="#000000" />
+<link rel="canonical" href="https://www.credify.io/book" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" />
+
+<link rel="stylesheet" href="styles/credify.css" />
+
+<!--
+  PAGE-LOCAL STYLES, Apply only
+  All chrome (nav, footer, .btn, .eyebrow-pill, .badge, .wrap) inherits from
+  credify.css. We add the form vocabulary here: a glass form shell, section
+  groupings, fieldset chrome, custom inputs, a sticky right-rail summary, and
+  the success state.
+-->
+<style>
+  /* ---------- APPLY HERO (compressed, the form is the focus) ---------- */
+  .apply-hero {
+    position: relative;
+    padding: clamp(120px, 11vw, 168px) 0 clamp(40px, 5vw, 56px);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .apply-hero-mesh {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(55% 55% at 75% 18%, rgba(16, 185, 129, 0.14), rgba(16, 185, 129, 0) 62%),
+      radial-gradient(50% 70% at 20% 100%, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0) 60%),
+      #000;
+    z-index: -1;
+  }
+  .apply-hero-inner {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  /* Eyebrow above the H1, anchors the page to the sticky-nav vocabulary */
+  .apply-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 14px 7px 12px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 4px 14px rgba(0, 0, 0, 0.30);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fg-80);
+  }
+  .apply-hero-eyebrow .pip {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--emerald);
+  }
+  .apply-hero h1 {
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: clamp(2.8rem, 6.8vw, 5.4rem);
+    letter-spacing: -0.052em;
+    line-height: 0.95;
+    color: var(--foreground);
+    margin: 18px 0 16px;
+    text-wrap: balance;
+  }
+  .apply-hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--fg-70);
+    letter-spacing: -0.04em;
+  }
+  .apply-hero-sub {
+    font-family: var(--font-sans);
+    font-size: clamp(15px, 1.1vw, 17px);
+    line-height: 1.55;
+    color: var(--fg-70);
+    max-width: 52ch;
+    margin: 0 auto;
+    text-wrap: pretty;
+  }
+  .apply-trust-strip {
+    display: inline-flex;
+    align-items: center; gap: 16px;
+    margin-top: 22px;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    /* Match the sticky-nav glass exactly */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 4px 14px rgba(0, 0, 0, 0.30);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--fg-70);
+  }
+  .apply-trust-strip .sep { color: var(--fg-30); }
+  .apply-trust-strip .pip {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--emerald);
+    box-shadow: 0 0 10px rgba(167,243,208,0.55);
+  }
+
+  /* ---------- LAYOUT ---------- */
+  .apply-stage {
+    position: relative;
+    padding: 0 0 clamp(80px, 10vw, 120px);
+  }
+  .apply-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 32px;
+    align-items: start;
+  }
+  @media (max-width: 980px) {
+    .apply-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- FORM SHELL (matches sticky nav glass, same surface as the rail card) ---------- */
+  .apply-form-shell {
+    position: relative;
+    border-radius: 24px;
+    padding: clamp(32px, 4.4vw, 56px);
+    /* Same recipe as .nav.is-stuck .nav-inner */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    isolation: isolate;
+    box-shadow:
+      0 10px 34px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+  .apply-form-shell::before {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.02));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .apply-form-shell::after { content: none; }
+  .apply-form-card {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Subtle pearl-edge highlight on top of the shell to read as glass */
+  .apply-form-shell-pearl {
+    position: absolute;
+    top: 1px; left: 14%; right: 14%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+    border-radius: 1px;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  /* ---------- FORM SECTIONS ---------- */
+  .form-section + .form-section {
+    margin-top: 40px;
+    padding-top: 36px;
+    border-top: 1px solid;
+    border-image: linear-gradient(90deg, rgba(167,243,208,0.18), rgba(255,255,255,0.10) 30%, rgba(255,255,255,0)) 1;
+  }
+  .form-section-head {
+    margin-bottom: 0;
+  }
+  .form-section-num {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--emerald);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding: 5px 11px 5px 9px;
+    border-radius: 9999px;
+    background: rgba(167, 243, 208, 0.06);
+    border: 1px solid rgba(167, 243, 208, 0.18);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+  .form-section-num::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--emerald);
+  }
+  .form-section-title {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: clamp(1.4rem, 2.2vw, 1.7rem);
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    color: #ffffff;
+    margin: 0;
+  }
+  .form-section-sub {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--fg-80);
+    margin: 10px 0 0;
+    max-width: 60ch;
+  }
+
+  /* ---------- FIELDS ---------- */
+  .field-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 22px;
+  }
+  .field-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .field-grid .full { grid-column: 1 / -1; }
+  @media (max-width: 700px) {
+    .field-grid, .field-grid--3 { grid-template-columns: 1fr; }
+  }
+
+  .field {
+    display: flex; flex-direction: column;
+    gap: 9px;
+  }
+  /* High-contrast sentence-case labels, bolder, bigger, plain sans.
+     Easier to scan than small all-caps mono labels. */
+  .field-label {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 6px;
+  }
+  .field-label .req {
+    color: var(--emerald);
+    font-size: 13px;
+    margin-left: 1px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .field-label .opt {
+    color: var(--fg-45);
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    white-space: nowrap;
+  }
+
+  .field-input,
+  .field-select,
+  .field-textarea {
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    /* Inputs sit slightly recessed inside the shell with a deeper plate */
+    background: linear-gradient(180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.20) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 11px;
+    padding: 14px 16px;
+    min-height: 52px;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.04),
+      inset 0 0 0 1px rgba(0,0,0,0.20),
+      0 1px 0 rgba(255,255,255,0.04);
+    transition:
+      border-color 200ms cubic-bezier(0.32, 0.72, 0, 1),
+      background 200ms cubic-bezier(0.32, 0.72, 0, 1),
+      box-shadow 200ms cubic-bezier(0.32, 0.72, 0, 1);
+    outline: none;
+  }
+  .field-input::placeholder,
+  .field-textarea::placeholder {
+    color: rgba(255,255,255,0.40);
+    font-weight: 400;
+  }
+  .field-input:hover,
+  .field-select:hover,
+  .field-textarea:hover {
+    border-color: rgba(255,255,255,0.26);
+    background: linear-gradient(180deg, rgba(0,0,0,0.26) 0%, rgba(0,0,0,0.14) 100%);
+  }
+  .field-input:focus,
+  .field-select:focus,
+  .field-textarea:focus {
+    border-color: rgba(167, 243, 208, 0.90);
+    background: linear-gradient(180deg, rgba(167,243,208,0.04) 0%, rgba(0,0,0,0.18) 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.06),
+      0 0 0 3px rgba(167, 243, 208, 0.22),
+      0 0 24px -6px rgba(167, 243, 208, 0.40);
+  }
+  .field-textarea {
+    min-height: 130px;
+    resize: vertical;
+    font-family: var(--font-sans);
+    line-height: 1.55;
+  }
+
+  /* Custom select chevron */
+  .field-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23a7f3d0' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'><path d='M1 2l5 4 5-4'/></svg>"),
+      linear-gradient(180deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.20) 100%);
+    background-repeat: no-repeat, no-repeat;
+    background-position: right 16px center, 0 0;
+    background-size: auto, 100% 100%;
+    padding-right: 44px;
+    cursor: pointer;
+  }
+  .field-select option {
+    background: #0a0a0a;
+    color: #ffffff;
+  }
+
+  /* (legacy currency-input chrome retired with the funding-amount field) */
+
+  /* ---------- DAY/SLOT PICKER ---------- */
+  .slot-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  /* Day track, grid of day tiles */
+  .day-track {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
+  }
+  @media (max-width: 720px) {
+    .day-track {
+      display: flex;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      gap: 8px;
+      padding-bottom: 4px;
+      margin: 0 -4px;
+    }
+    .day-tile { flex: 0 0 84px; scroll-snap-align: start; }
+  }
+  .day-tile {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0.18) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 13px;
+    padding: 13px 8px 15px;
+    text-align: center;
+    font-family: var(--font-sans);
+    color: var(--fg-80);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.05),
+      0 1px 0 rgba(0,0,0,0.30);
+    transition:
+      border-color 200ms,
+      background 200ms,
+      color 200ms,
+      box-shadow 200ms,
+      transform 220ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .day-tile:hover:not(.is-disabled) {
+    border-color: rgba(255,255,255,0.28);
+    background: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(0,0,0,0.12) 100%);
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+  .day-tile.is-active {
+    background:
+      linear-gradient(180deg, rgba(167, 243, 208, 0.20), rgba(167, 243, 208, 0.05));
+    border-color: rgba(167, 243, 208, 0.55);
+    color: var(--foreground);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.10),
+      0 0 28px -6px rgba(167, 243, 208, 0.55);
+  }
+  .day-tile.is-disabled {
+    opacity: 0.30;
+    cursor: not-allowed;
+  }
+  .day-tile-dow {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fg-60);
+    margin-bottom: 6px;
+  }
+  .day-tile.is-active .day-tile-dow { color: var(--emerald); }
+  .day-tile-day {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.0;
+    color: inherit;
+  }
+  .day-tile-mo {
+    display: block;
+    font-size: 11px;
+    color: var(--fg-60);
+    margin-top: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Slot grid, time chips */
+  .slot-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    min-height: 48px;
+  }
+  @media (max-width: 720px) {
+    .slot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (max-width: 460px) {
+    .slot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  .slot-btn {
+    cursor: pointer;
+    padding: 13px 10px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0.18) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    text-align: center;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.04),
+      0 1px 0 rgba(0,0,0,0.30);
+    transition:
+      border-color 200ms,
+      background 200ms,
+      color 200ms,
+      box-shadow 200ms,
+      transform 220ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .slot-btn:hover:not(:disabled) {
+    border-color: rgba(255,255,255,0.30);
+    background: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, rgba(0,0,0,0.12) 100%);
+    transform: translateY(-1px);
+  }
+  .slot-btn.is-active {
+    background:
+      linear-gradient(180deg, rgba(167, 243, 208, 0.20), rgba(167, 243, 208, 0.05));
+    border-color: rgba(167, 243, 208, 0.60);
+    color: var(--emerald);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.10),
+      0 0 24px -6px rgba(167, 243, 208, 0.55);
+  }
+  .slot-btn:disabled {
+    opacity: 0.32;
+    cursor: not-allowed;
+    text-decoration: line-through;
+    text-decoration-color: rgba(255,255,255,0.25);
+  }
+  .slot-grid-empty {
+    grid-column: 1 / -1;
+    padding: 18px 12px;
+    border: 1px dashed rgba(255,255,255,0.18);
+    border-radius: 10px;
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--fg-60);
+  }
+
+  /* Slot hint pip */
+  .slot-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--fg-60);
+  }
+  .slot-hint.is-confirmed { color: var(--emerald); }
+  .slot-hint-pip {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.18);
+    transition: background 220ms, box-shadow 220ms;
+  }
+  .slot-hint.is-confirmed .slot-hint-pip {
+    background: var(--emerald);
+  }
+
+  /* ---------- BUTTON (primary submit, emerald-edged pill) ---------- */
+  .btn-book {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    height: 52px;
+    padding: 0 28px;
+    border-radius: 9999px;
+    border: 1px solid rgba(167, 243, 208, 0.42);
+    background:
+      linear-gradient(180deg, rgba(167, 243, 208, 0.10) 0%, rgba(167, 243, 208, 0.04) 100%),
+      rgba(10, 10, 10, 0.6);
+    color: #ffffff;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    cursor: pointer;
+    display: inline-flex; align-items: center; gap: 12px;
+    transition:
+      transform 220ms cubic-bezier(0.32, 0.72, 0, 1),
+      border-color 220ms,
+      background 220ms,
+      box-shadow 220ms;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 6px 16px rgba(0, 0, 0, 0.40);
+  }
+  .btn-book::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -40%;
+    width: 40%; height: 100%;
+    background: linear-gradient(90deg,
+      rgba(167,243,208,0) 0%,
+      rgba(167,243,208,0.14) 50%,
+      rgba(167,243,208,0) 100%);
+    animation: book-sweep 4.2s ease-in-out infinite;
+    z-index: -1;
+  }
+  @keyframes book-sweep {
+    0%   { left: -40%; }
+    50%  { left: 100%; }
+    100% { left: 100%; }
+  }
+  .btn-book:hover {
+    transform: translateY(-1px);
+    border-color: rgba(167, 243, 208, 0.65);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.10),
+      0 10px 22px rgba(0, 0, 0, 0.45),
+      0 0 28px -10px rgba(167, 243, 208, 0.40);
+  }
+  .btn-book .btn-icon {
+    width: 26px; height: 26px;
+    border-radius: 9999px;
+    background: rgba(167, 243, 208, 0.28);
+    box-shadow: inset 0 0 0 1px rgba(167, 243, 208, 0.6);
+    color: #ffffff;
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: background 220ms;
+  }
+  .btn-book:hover .btn-icon { background: rgba(167, 243, 208, 0.42); }
+  .btn-book .btn-icon svg { width: 13px; height: 13px; }
+  @media (prefers-reduced-motion: reduce) {
+    .btn-book::before { animation: none; }
+  }
+
+  /* ---------- FORM FOOT (submit row, set off with a quiet warm scrim) ---------- */
+  .form-foot {
+    position: relative;
+    margin: 44px calc(-1 * clamp(32px, 4.4vw, 56px)) calc(-1 * clamp(32px, 4.4vw, 56px));
+    padding: 28px clamp(32px, 4.4vw, 56px);
+    border-top: 1px solid;
+    border-image: linear-gradient(90deg, rgba(167,243,208,0.20), rgba(255,255,255,0.10) 30%, rgba(255,255,255,0)) 1;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.015) 0%, rgba(0,0,0,0.20) 100%);
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .form-foot-meta {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    color: var(--fg-70);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .form-foot-meta .lock {
+    width: 13px; height: 13px;
+    color: var(--emerald);
+  }
+
+  /* ---------- RIGHT RAIL: SUMMARY + WHAT HAPPENS NEXT ---------- */
+  /* Override the global `overflow-x: hidden` on body/main, that creates a
+     scroll context that disables `position: sticky` on descendants. We use
+     `clip` instead, which prevents horizontal overflow without becoming a
+     scroll container. */
+  html, body { overflow-x: clip; }
+  body { overflow-y: visible; }
+  main { overflow-x: clip; overflow-y: visible; }
+
+  .apply-rail {
+    position: sticky;
+    top: 110px;
+    display: flex; flex-direction: column;
+    gap: 18px;
+    align-self: start;
+  }
+  @media (max-width: 980px) {
+    .apply-rail { position: static; }
+  }
+  .rail-card {
+    position: relative;
+    border-radius: 24px;
+    padding: 28px 26px 26px;
+    /* Same recipe as .nav.is-stuck .nav-inner, match the form shell exactly */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    isolation: isolate;
+    box-shadow:
+      0 10px 34px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+  }
+  .rail-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.02));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .rail-card::after { content: none; }
+  .rail-card > * { position: relative; z-index: 1; }
+
+  .rail-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--emerald);
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-bottom: 14px;
+  }
+  /* Centered variant for rail card headers */
+  .rail-card-head {
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  .rail-card-head .rail-eyebrow {
+    margin-bottom: 10px;
+  }
+  .rail-card-head .rail-title {
+    margin: 0;
+  }
+  .rail-eyebrow .pip {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--emerald);
+  }
+  .rail-title {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: clamp(1.35rem, 1.9vw, 1.5rem);
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    color: var(--foreground);
+    margin: 0 0 18px;
+  }
+
+  /* Path steps inside rail */
+  .rail-steps {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: flex; flex-direction: column;
+    counter-reset: rs;
+  }
+  .rail-steps li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 12px;
+    padding: 12px 0;
+    counter-increment: rs;
+  }
+  .rail-steps li + li {
+    border-top: 1px solid var(--border);
+  }
+  .rail-steps li::before {
+    content: counter(rs, decimal-leading-zero);
+    grid-column: 1;
+    align-self: start;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--emerald);
+    margin-top: 2px;
+  }
+  .rail-step-title {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    color: #ffffff;
+    margin: 0 0 4px;
+  }
+  .rail-step-body {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--fg-80);
+    margin: 0;
+  }
+
+  /* Trust block at bottom of rail */
+  .rail-trust {
+    display: flex; flex-direction: column;
+    gap: 10px;
+  }
+  .rail-trust-row {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  .rail-trust-row svg {
+    width: 14px; height: 14px;
+    color: var(--emerald);
+    flex-shrink: 0;
+  }
+
+  /* ---------- SUCCESS STATE ---------- */
+  .apply-success {
+    display: none;
+    text-align: center;
+    padding: 48px 32px;
+  }
+  .apply-form-card.is-submitted .form-section,
+  .apply-form-card.is-submitted .form-foot { display: none; }
+  .apply-form-card.is-submitted .apply-success { display: block; }
+
+  .success-mark {
+    width: 64px; height: 64px;
+    margin: 0 auto 20px;
+    border-radius: 9999px;
+    background: rgba(167, 243, 208, 0.10);
+    border: 1px solid rgba(167, 243, 208, 0.40);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.10),
+      0 0 28px -4px rgba(167, 243, 208, 0.55);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--emerald);
+  }
+  .success-mark svg { width: 28px; height: 28px; }
+  .success-h {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    color: var(--foreground);
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+  .success-h em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--emerald);
+  }
+  .success-body {
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--fg-70);
+    max-width: 50ch;
+    margin: 0 auto 22px;
+  }
+  .success-meta {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 8px 14px;
+    border-radius: 9999px;
+    background: rgba(167, 243, 208, 0.06);
+    border: 1px solid rgba(167, 243, 208, 0.20);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--emerald);
+  }
+</style>
+
+</head>
+<body data-screen-label="Apply">
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- =================== NAV (consistent w/ Solutions + home) =================== -->
+<header class="nav" id="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="wordmark" aria-label="Credify home">Credify</a>
+    <nav class="nav-links hidden md:flex" aria-label="Sections">
+      <a href="index.html#services" class="nav-link">Services</a>
+      <a href="Solutions.html" class="nav-link">Solutions</a>
+      <a href="index.html#process"  class="nav-link">How It Works</a>
+      <a href="index.html#why"      class="nav-link">Why Credify</a>
+    </nav>
+    <a href="mailto:Fund@getcredify.io" class="btn btn-outline btn-compact hero-cta-main hero-cta-main--compact">
+      <span class="cta-spark" aria-hidden="true"></span>
+      Talk to a partner
+      <span class="btn-icon" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8"/><path d="M7.5 3l3.5 4-3.5 4"/></svg>
+      </span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- =================== HERO =================== -->
+<section class="apply-hero" aria-labelledby="apply-h1">
+  <div class="apply-hero-mesh" aria-hidden="true"></div>
+  <div class="apply-hero-inner">
+    <span class="apply-hero-eyebrow reveal" aria-hidden="true">
+      <span class="pip"></span>
+      Strategy Call
+    </span>
+    <h1 id="apply-h1" class="reveal">
+      Book a call.<br /><em>See how we can help.</em>
+    </h1>
+    <p class="apply-hero-sub reveal">
+      Twenty minutes. One advisor. We tell you straight whether your file fits. If not, we tell you who does. No credit pull. No commitment. No runaround.
+    </p>
+    <div class="apply-trust-strip reveal" aria-hidden="true">
+      <span>20-min discovery call</span>
+      <span class="sep">&middot;</span>
+      <span>Your dedicated advisor</span>
+      <span class="sep">&middot;</span>
+      <span>$100K minimum approval</span>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FORM STAGE =================== -->
+<section class="apply-stage" aria-label="Application form">
+  <div class="wrap">
+    <div class="apply-grid">
+
+      <!-- ============ FORM SHELL ============ -->
+      <div class="apply-form-shell reveal">
+        <span class="apply-form-shell-pearl" aria-hidden="true"></span>
+        <form id="apply-form" class="apply-form-card" novalidate>
+
+          <!-- ============ SECTION 01: BUSINESS BASICS ============ -->
+          <div class="form-section">
+            <span class="form-section-num">01 / Business basics</span>
+            <h2 class="form-section-title">Who&rsquo;s the operator?</h2>
+            <p class="form-section-sub">Just enough to know who&rsquo;s on the other side of the email. Everything stays on our desk.</p>
+
+
+            <div class="field-grid">
+              <div class="field">
+                <label class="field-label" for="f-fname">Your name <span class="req">*</span></label>
+                <input class="field-input" id="f-fname" name="fname" type="text" autocomplete="name" placeholder="Alex Morgan" required />
+              </div>
+              <div class="field">
+                <label class="field-label" for="f-role">Your role <span class="opt">optional</span></label>
+                <input class="field-input" id="f-role" name="role" type="text" autocomplete="organization-title" placeholder="Owner / CFO / Operator" />
+              </div>
+              <div class="field">
+                <label class="field-label" for="f-business">Business name <span class="req">*</span></label>
+                <input class="field-input" id="f-business" name="business" type="text" autocomplete="organization" placeholder="Morgan Holdings LLC" required />
+              </div>
+              <div class="field">
+                <label class="field-label" for="f-industry">Industry <span class="opt">optional</span></label>
+                <select class="field-select" id="f-industry" name="industry">
+                  <option value="">Pick one&hellip;</option>
+                  <option>Real Estate</option>
+                  <option>Construction</option>
+                  <option>Healthcare</option>
+                  <option>Retail / E-commerce</option>
+                  <option>Restaurants</option>
+                  <option>Trucking &amp; Logistics</option>
+                  <option>Manufacturing</option>
+                  <option>Home Services</option>
+                  <option>Professional Services</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="field-label" for="f-email">Email <span class="req">*</span></label>
+                <input class="field-input" id="f-email" name="email" type="email" autocomplete="email" placeholder="alex@morganholdings.com" required />
+              </div>
+              <div class="field">
+                <label class="field-label" for="f-phone">Phone <span class="opt">optional</span></label>
+                <input class="field-input" id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(212) 555&ndash;0142" />
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ SECTION 02: PICK A TIME ============ -->
+          <div class="form-section">
+            <span class="form-section-num">02 / Pick a time</span>
+            <h2 class="form-section-title">When works for you?</h2>
+            <p class="form-section-sub">All times Eastern. Pick a day, then a slot. We&rsquo;ll send a calendar invite the moment you book.</p>
+
+            <div class="slot-picker" style="margin-top:24px;">
+              <div class="day-track" role="radiogroup" aria-label="Choose a day"></div>
+              <div class="slot-grid" role="radiogroup" aria-label="Choose a time"></div>
+              <input type="hidden" id="f-slot" name="slot" required />
+              <p class="slot-hint" id="slot-hint">
+                <span class="slot-hint-pip" aria-hidden="true"></span>
+                <span id="slot-hint-text">Select a day to see available times.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- ============ SECTION 03: CONTEXT ============ -->
+          <div class="form-section">
+            <span class="form-section-num">03 / Quick context</span>
+            <h2 class="form-section-title">A few markers, so we&rsquo;re ready.</h2>
+            <p class="form-section-sub">All optional. The more we know going in, the more useful the call. Skip anything you&rsquo;d rather discuss live.</p>
+
+            <div class="field-grid field-grid--3">
+              <div class="field">
+                <label class="field-label" for="f-amount">Capital range <span class="opt">optional</span></label>
+                <select class="field-select" id="f-amount" name="amount">
+                  <option value="">Rough estimate&hellip;</option>
+                  <option>$100K &ndash; $250K</option>
+                  <option>$250K &ndash; $500K</option>
+                  <option>$500K &ndash; $1M</option>
+                  <option>$1M &ndash; $2.5M</option>
+                  <option>$2.5M &ndash; $5M</option>
+                  <option>$5M+</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="field-label" for="f-revenue">Annual revenue <span class="opt">optional</span></label>
+                <select class="field-select" id="f-revenue" name="revenue">
+                  <option value="">Pick a range&hellip;</option>
+                  <option>&lt; $250K</option>
+                  <option>$250K &ndash; $1M</option>
+                  <option>$1M &ndash; $5M</option>
+                  <option>$5M &ndash; $25M</option>
+                  <option>$25M+</option>
+                  <option>Pre-revenue</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="field-label" for="f-time">Time in business <span class="opt">optional</span></label>
+                <select class="field-select" id="f-time" name="time-in-business">
+                  <option value="">Pick a range&hellip;</option>
+                  <option>&lt; 1 year</option>
+                  <option>1 &ndash; 2 years</option>
+                  <option>2 &ndash; 5 years</option>
+                  <option>5 &ndash; 10 years</option>
+                  <option>10+ years</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ SECTION 04: WHAT TO COVER ============ -->
+          <div class="form-section">
+            <span class="form-section-num">04 / Your situation</span>
+            <h2 class="form-section-title">Tell us briefly where you&rsquo;re at.</h2>
+            <p class="form-section-sub">A sentence or two on what you&rsquo;re working on right now: the deal, the timeline, the roadblock. We&rsquo;ll use it to tailor the discovery call to your situation, so we don&rsquo;t waste your twenty minutes on the obvious.</p>
+
+            <div class="field full" style="margin-top:22px;">
+              <label class="field-label" for="f-notes" style="margin-bottom:9px;">Your situation <span class="opt">optional</span></label>
+              <textarea class="field-textarea" id="f-notes" name="notes" placeholder="e.g. Bridge for a 1031 exchange. SBA loan stalled on use-of-funds, 9 days to close. Want to know if you can move that fast."></textarea>
+            </div>
+          </div>
+
+          <!-- ============ FORM FOOT ============ -->
+          <footer class="form-foot">
+            <span class="form-foot-meta">
+              <svg class="lock" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5 7V5a3 3 0 0 1 6 0v2"/></svg>
+              Encrypted &middot; No credit pull
+            </span>
+            <button type="submit" class="btn-book">
+              Book the call
+              <span class="btn-icon" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10"/><path d="M9 3l4 5-4 5"/></svg>
+              </span>
+            </button>
+          </footer>
+
+          <!-- ============ SUCCESS STATE ============ -->
+          <div class="apply-success" role="status" aria-live="polite">
+            <div class="success-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+            </div>
+            <h2 class="success-h">Booked. <em>You&rsquo;re on the calendar.</em></h2>
+            <p class="success-body">A confirmation just hit your inbox with the dial-in for <strong style="color: var(--foreground);" id="success-when">your call</strong>. If anything changes, just reply to that email. Need to talk sooner? Call <strong style="color: var(--foreground);">(212) 555&ndash;0142</strong> and ask for the desk.</p>
+            <span class="success-meta">
+              <span class="pip" style="width:6px;height:6px;border-radius:50%;background:var(--emerald);"></span>
+              Calendar invite sent &middot; See you then
+            </span>
+          </div>
+        </form>
+      </div>
+
+      <!-- ============ RIGHT RAIL ============ -->
+      <aside class="apply-rail" aria-label="What to expect">
+        <div class="rail-card">
+          <header class="rail-card-head">
+            <span class="rail-eyebrow"><span class="pip"></span> What we&rsquo;ll cover</span>
+            <h3 class="rail-title">Twenty minutes, well spent.</h3>
+          </header>
+          <ol class="rail-steps">
+            <li>
+              <div>
+                <p class="rail-step-title">Your situation</p>
+                <p class="rail-step-body">What you&rsquo;re working on, what banks said, what&rsquo;s on the line.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <p class="rail-step-title">Honest read</p>
+                <p class="rail-step-body">Whether we can help. And if not, who can. No sales pitch, no runaround.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <p class="rail-step-title">The path forward</p>
+                <p class="rail-step-body">If we&rsquo;re a fit, we&rsquo;ll outline the route to capital and the timeline.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <p class="rail-step-title">Next step, if any</p>
+                <p class="rail-step-body">No pressure. You decide whether to keep going. On your timeline, not ours.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="rail-card">
+          <header class="rail-card-head">
+            <span class="rail-eyebrow"><span class="pip"></span> Why book the call</span>
+          </header>
+          <div class="rail-trust">
+            <div class="rail-trust-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+              No credit pull. No application.
+            </div>
+            <div class="rail-trust-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+              A partner from our desk.
+            </div>
+            <div class="rail-trust-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+              Straight answer, even if it&rsquo;s no.
+            </div>
+            <div class="rail-trust-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+              You can reschedule any time, in one click.
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =================== FOOTER (consistent w/ Solutions) =================== -->
+<footer class="footer-stage">
+  <div class="footer-mark-bg" aria-hidden="true">
+    <span class="footer-mark-glow"></span>
+    <span class="footer-mark-text">Credify</span>
+  </div>
+  <div class="wrap footer-stage-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="wordmark" style="font-size:24px;">Credify</div>
+        <p class="footer-tagline">Making the impossible possible. $100K minimum approval, guaranteed. The capital firm for operators denied everywhere else.</p>
+        <span class="footer-status"><span class="footer-pip" aria-hidden="true"></span> Desk Open &middot; Replying Now</span>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Company</div>
+        <a href="index.html#services" class="footer-link">Services</a>
+        <a href="Solutions.html" class="footer-link">Solutions</a>
+        <a href="index.html#process"  class="footer-link">How It Works</a>
+        <a href="index.html#why"      class="footer-link">Why Credify</a>
+      </div>
+      <div class="footer-col footer-col--services-wide">
+        <div class="footer-col-label">Industries</div>
+        <div class="footer-link-grid">
+          <a href="Solutions.html#real-estate" class="footer-link">Real Estate</a>
+          <a href="Solutions.html#construction" class="footer-link">Construction</a>
+          <a href="Solutions.html#healthcare" class="footer-link">Healthcare</a>
+          <a href="Solutions.html#retail" class="footer-link">Retail</a>
+          <a href="Solutions.html#restaurants" class="footer-link">Restaurants</a>
+          <a href="Solutions.html#trucking" class="footer-link">Trucking</a>
+          <a href="Solutions.html#manufacturing" class="footer-link">Manufacturing</a>
+          <a href="Solutions.html#home-services" class="footer-link">Home Services</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Connect</div>
+        <a href="mailto:Fund@getcredify.io" class="footer-link">Fund@getcredify.io</a>
+        <a href="Apply.html" class="footer-link">Book a Strategy Call</a>
+      </div>
+    </div>
+
+    <div class="footer-rule"></div>
+
+    <div class="flex items-center justify-between footer-fine" style="gap:20px; flex-wrap:wrap;">
+      <span>&copy; MMXXVI Credify / Fund@getcredify.io</span>
+      <span>Credify is a capital advisory desk. Not a direct lender.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ---------- Sticky nav background on scroll ----------
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      if (!nav) return;
+      if (window.scrollY > 24) nav.classList.add('is-stuck');
+      else nav.classList.remove('is-stuck');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // ---------- Reveal-on-scroll ----------
+    if (!reduce && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in'));
+    }
+
+    // ---------- Day / time-slot picker ----------
+    // Generates the next 14 weekdays. Weekends are shown but disabled
+    // (the desk is closed). Each weekday gets a randomized but stable subset
+    // of available time slots between 9am and 5pm ET, so the page feels real
+    //, some slots are already taken.
+    const dayTrack  = document.querySelector('.day-track');
+    const slotGrid  = document.querySelector('.slot-grid');
+    const slotInput = document.getElementById('f-slot');
+    const slotHint  = document.getElementById('slot-hint');
+    const slotHintText = document.getElementById('slot-hint-text');
+
+    const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const MO  = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    // Half-hour slots, 9:00am – 4:30pm ET (last call starts 4:30, ends 4:50)
+    const SLOTS = [
+      '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM',
+      '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM',
+      '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM',
+      '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM'
+    ];
+    // Deterministic pseudo-random based on date string, same "taken" slots
+    // every load, so a user re-visiting sees a stable calendar.
+    const seedHash = (s) => {
+      let h = 0;
+      for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+      return Math.abs(h);
+    };
+    const isTaken = (dateStr, slotIdx) => {
+      // ~35% of slots taken, roughly weighted toward midday
+      const h = seedHash(dateStr + ':' + slotIdx);
+      return (h % 100) < 35;
+    };
+
+    // Build the 14 upcoming days
+    const days = [];
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    for (let i = 0; i < 14; i++) {
+      const d = new Date(today);
+      d.setDate(today.getDate() + i + 1); // start tomorrow
+      const dow = d.getDay();
+      const isWeekend = (dow === 0 || dow === 6);
+      const dateStr = d.toISOString().slice(0, 10);
+      days.push({
+        date: d,
+        dateStr,
+        dow: DOW[dow],
+        day: d.getDate(),
+        mo: MO[d.getMonth()],
+        isWeekend
+      });
+    }
+
+    // Render day track (show 7 at a time on desktop, all 14 scrollable on mobile)
+    const visibleDays = window.matchMedia('(max-width: 720px)').matches ? days : days.slice(0, 7);
+    let selectedDay = null;
+    let selectedSlot = null;
+
+    visibleDays.forEach(d => {
+      const tile = document.createElement('button');
+      tile.type = 'button';
+      tile.className = 'day-tile' + (d.isWeekend ? ' is-disabled' : '');
+      tile.setAttribute('role', 'radio');
+      tile.setAttribute('aria-checked', 'false');
+      tile.setAttribute('aria-label', `${d.dow} ${d.mo} ${d.day}${d.isWeekend ? ' (closed)' : ''}`);
+      if (d.isWeekend) tile.disabled = true;
+      tile.dataset.dateStr = d.dateStr;
+      tile.innerHTML = `
+        <span class="day-tile-dow">${d.dow}</span>
+        <span class="day-tile-day">${d.day}</span>
+        <span class="day-tile-mo">${d.mo}</span>
+      `;
+      tile.addEventListener('click', () => {
+        if (d.isWeekend) return;
+        selectDay(d);
+      });
+      dayTrack.appendChild(tile);
+    });
+
+    function renderSlots(d) {
+      slotGrid.innerHTML = '';
+      SLOTS.forEach((label, idx) => {
+        const taken = isTaken(d.dateStr, idx);
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'slot-btn';
+        btn.setAttribute('role', 'radio');
+        btn.setAttribute('aria-checked', 'false');
+        btn.setAttribute('aria-label', `${label} on ${d.dow} ${d.mo} ${d.day}${taken ? ' (unavailable)' : ''}`);
+        btn.disabled = taken;
+        btn.textContent = label;
+        btn.addEventListener('click', () => selectSlot(d, label, btn));
+        slotGrid.appendChild(btn);
+      });
+    }
+
+    function selectDay(d) {
+      selectedDay = d;
+      selectedSlot = null;
+      slotInput.value = '';
+      // Update day-tile active state
+      [...dayTrack.children].forEach(t => {
+        const isMe = t.dataset.dateStr === d.dateStr;
+        t.classList.toggle('is-active', isMe);
+        t.setAttribute('aria-checked', isMe ? 'true' : 'false');
+      });
+      renderSlots(d);
+      slotHint.classList.remove('is-confirmed');
+      slotHintText.textContent = `Choose a time for ${d.dow}, ${d.mo} ${d.day}`;
+    }
+
+    function selectSlot(d, label, btn) {
+      selectedSlot = label;
+      [...slotGrid.children].forEach(b => {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-checked', 'false');
+      });
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-checked', 'true');
+      const value = `${d.dow}, ${d.mo} ${d.day} · ${label} ET`;
+      slotInput.value = value;
+      slotHint.classList.add('is-confirmed');
+      slotHintText.textContent = `Holding ${value}`;
+    }
+
+    // Empty initial slot grid hint
+    if (slotGrid && !slotGrid.children.length) {
+      const empty = document.createElement('div');
+      empty.className = 'slot-grid-empty';
+      empty.textContent = 'Pick a day above to see open times.';
+      slotGrid.appendChild(empty);
+    }
+
+    // ---------- Pre-fill from URL params (e.g. ?industry=Real%20Estate) ----------
+    const params = new URLSearchParams(window.location.search);
+    const setIfParam = (paramKey, fieldId) => {
+      const v = params.get(paramKey);
+      if (!v) return;
+      const el = document.getElementById(fieldId);
+      if (!el) return;
+      // For selects, only set if a matching option exists
+      if (el.tagName === 'SELECT') {
+        const found = [...el.options].find(o => o.value === v || o.textContent.trim() === v);
+        if (found) el.value = found.value || found.textContent;
+      } else {
+        el.value = v;
+      }
+    };
+    setIfParam('industry', 'f-industry');
+    setIfParam('amount', 'f-amount');
+
+    // ---------- Submit handling ----------
+    const form = document.getElementById('apply-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Native validation pass first
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        // Inject booked slot into success copy
+        const successWhen = document.getElementById('success-when');
+        if (successWhen && slotInput && slotInput.value) {
+          successWhen.textContent = slotInput.value;
+        }
+        form.classList.add('is-submitted');
+        // Smooth scroll the success card into a comfortable position
+        const card = form;
+        if (card && card.scrollIntoView) {
+          window.scrollTo({ top: card.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth' });
+        }
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

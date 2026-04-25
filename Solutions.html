@@ -1,0 +1,1162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Credify // Solutions: Capital Built for Your Industry</title>
+<meta name="description" content="Every industry has a different funding playbook. We connect operators denied elsewhere with lenders who actually understand their business: construction, healthcare, real estate, trucking, and more." />
+<meta name="theme-color" content="#000000" />
+<link rel="canonical" href="https://www.credify.io/solutions" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Credify // Solutions: Capital Built for Your Industry" />
+<meta property="og:description" content="Industry-specific funding for operators denied everywhere else. $100K minimum approval, guaranteed." />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23000000'/><text x='50%25' y='58%25' text-anchor='middle' font-family='system-ui, sans-serif' font-size='36' font-weight='800' fill='%23ffffff' dominant-baseline='middle'>C</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<link rel="stylesheet" href="styles/credify.css" />
+
+<!--
+  PAGE-LOCAL STYLES, Solutions only
+  The base look (nav, footer, .card, .sec-head, .eyebrow-pill, .apply-banner,
+  .stat-tray, button system) is inherited from credify.css. We only add what
+  this page introduces: a more compact hero, a 3-up value tray, an industry
+  card variant with a challenges/products split body, and a quick anchor rail.
+-->
+<style>
+
+  /* ---------- HERO (compact variant, shorter than home, anchored higher) ---------- */
+  .sol-hero {
+    position: relative;
+    min-height: 78vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: clamp(140px, 17vh, 200px);
+    padding-bottom: clamp(64px, 8vw, 112px);
+    background: var(--background);
+    overflow: hidden;
+    text-align: center;
+    z-index: 20;
+  }
+  .sol-hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .sol-hero-bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .sol-hero-overlay {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 70% at 50% 52%, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.66) 45%, rgba(0,0,0,0.40) 100%),
+      linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.30) 40%, rgba(0,0,0,0.45) 100%);
+    z-index: 1;
+  }
+  .sol-hero-fade {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 14rem;
+    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    z-index: 2; pointer-events: none;
+  }
+  .sol-hero-inner {
+    position: relative; z-index: 3;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sol-hero-inner .badge { margin-bottom: 28px; }
+
+  h1.sol-hero-h1 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: clamp(2.6rem, 5.6vw, 5.4rem);
+    letter-spacing: -0.05em;
+    line-height: 0.98;
+    color: #ffffff;
+    margin: 0 0 28px;
+    width: max-content;
+    max-width: 100%;
+    text-wrap: nowrap;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.45), 0 2px 24px rgba(0,0,0,0.55);
+  }
+  h1.sol-hero-h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: -0.04em;
+  }
+  @media (max-width: 720px) {
+    h1.sol-hero-h1 { width: auto; text-wrap: balance; max-width: 22ch; }
+  }
+
+  .sol-hero-sub {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: clamp(17px, 1.4vw, 21px);
+    line-height: 1.55;
+    color: rgba(255,255,255,0.78);
+    max-width: 56ch;
+    margin: 0 0 36px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.55), 0 2px 14px rgba(0,0,0,0.45);
+  }
+  .sol-hero-ctas {
+    display: flex; flex-direction: row; flex-wrap: wrap;
+    align-items: center; justify-content: center;
+    gap: 14px;
+  }
+  /* Secondary CTA on the hero, solid white-on-transparent ghost matching .btn-outline */
+  .btn-ghost {
+    background: transparent;
+    color: rgba(255,255,255,0.78);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 14px 24px;
+    border-radius: 9999px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 14.5px;
+    letter-spacing: -0.01em;
+    transition: color 220ms, border-color 220ms, background 220ms;
+  }
+  .btn-ghost:hover {
+    color: #ffffff;
+    border-color: rgba(255,255,255,0.36);
+    background: rgba(255,255,255,0.04);
+  }
+
+  /* ---------- 3-UP VALUE TRAY (sits over the hero/section seam) ---------- */
+  .value-tray {
+    position: relative;
+    z-index: 30;
+    margin-top: clamp(-72px, -6vw, -56px); /* lifts into the hero fade */
+    padding: 0 32px;
+  }
+  .value-tray-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(14px) saturate(1.2);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .value-cell {
+    padding: 36px 32px;
+    border-right: 1px solid var(--border);
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .value-cell:last-child { border-right: none; }
+  .value-icon {
+    width: 32px; height: 32px;
+    display: inline-flex; align-items: center; justify-content: center;
+    color: var(--emerald);
+    margin-bottom: 6px;
+  }
+  .value-icon svg { width: 100%; height: 100%; }
+  .value-title {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: -0.025em;
+    color: var(--foreground);
+    line-height: 1.2;
+  }
+  .value-desc {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--fg-60);
+    margin: 0;
+    max-width: 36ch;
+  }
+  @media (max-width: 860px) {
+    .value-tray-inner { grid-template-columns: 1fr; }
+    .value-cell { border-right: none; border-bottom: 1px solid var(--border); }
+    .value-cell:last-child { border-bottom: none; }
+  }
+
+  /* ---------- INDUSTRY ANCHOR RAIL (chip nav under the value tray) ---------- */
+  .ind-rail {
+    position: sticky;
+    top: 80px;
+    z-index: 25;
+    background: rgba(0,0,0,0.78);
+    backdrop-filter: blur(14px) saturate(1.2);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-top: clamp(56px, 7vw, 88px);
+  }
+  .ind-rail-inner {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .ind-rail-inner::-webkit-scrollbar { display: none; }
+  .ind-rail-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fg-45);
+    white-space: nowrap;
+    padding-right: 16px;
+    border-right: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .ind-rail-link {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--fg-60);
+    white-space: nowrap;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    transition: color 220ms, background 220ms;
+    flex-shrink: 0;
+  }
+  .ind-rail-link:hover {
+    color: var(--foreground);
+    background: rgba(255,255,255,0.06);
+  }
+  .ind-rail-link.active {
+    color: var(--emerald-950);
+    background: var(--emerald);
+  }
+
+  /* ---------- INDUSTRY CARDS (extends .card with split-body layout) ---------- */
+  .industries-section { padding: clamp(80px, 10vw, 128px) 0; }
+  .ind-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  @media (max-width: 860px) {
+    .ind-grid { grid-template-columns: 1fr; }
+  }
+  .ind-card {
+    /* Liquid-glass treatment matching .card / .apply-banner / hero bezels:
+       subtle vertical gradient surface, soft inner highlight at the top edge,
+       ambient emerald wash from the lower-right corner, and a masked white rim
+       drawn via ::before. Picks up the same depth language as the rest of the
+       site instead of the dry flat-surface look. */
+    position: relative;
+    background:
+      radial-gradient(120% 90% at 100% 100%, rgba(16, 185, 129, 0.10) 0%, rgba(16, 185, 129, 0) 55%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.045) 0%, rgba(255, 255, 255, 0.015) 100%),
+      var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px 32px 28px;
+    overflow: hidden;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-height: 380px;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.04) inset,
+      0 18px 40px -28px rgba(0, 0, 0, 0.6),
+      0 1px 2px rgba(0, 0, 0, 0.4);
+    transition: background 320ms cubic-bezier(0.25, 1, 0.35, 1),
+                border-color 320ms cubic-bezier(0.25, 1, 0.35, 1),
+                transform 320ms cubic-bezier(0.25, 1, 0.35, 1),
+                box-shadow 320ms cubic-bezier(0.25, 1, 0.35, 1);
+  }
+  /* Soft white rim, same vocabulary as cards, comparison shell, apply banner */
+  .ind-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.03));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    pointer-events: none;
+    z-index: 2;
+  }
+  /* Ambient blurred emerald orb that intensifies on hover */
+  .ind-card::after {
+    content: '';
+    position: absolute;
+    right: -30%; bottom: -40%;
+    width: 70%; height: 80%;
+    background: radial-gradient(closest-side, rgba(52, 211, 153, 0.20), rgba(52, 211, 153, 0) 70%);
+    filter: blur(30px);
+    opacity: 0.55;
+    transition: opacity 320ms cubic-bezier(0.25, 1, 0.35, 1), transform 320ms cubic-bezier(0.25, 1, 0.35, 1);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .ind-card > * { position: relative; z-index: 1; }
+  .ind-card:hover {
+    background:
+      radial-gradient(120% 90% at 100% 100%, rgba(16, 185, 129, 0.16) 0%, rgba(16, 185, 129, 0) 55%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.025) 100%),
+      var(--surface-2);
+    border-color: var(--border-2);
+    transform: translateY(-4px);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.08) inset,
+      0 30px 60px -30px rgba(0, 0, 0, 0.7),
+      0 0 40px -10px rgba(16, 185, 129, 0.18),
+      0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+  .ind-card:hover::after {
+    opacity: 0.95;
+    transform: scale(1.08);
+  }
+
+  /* Flagship industry (Real Estate), spans both columns, larger emerald wash */
+  .ind-card.is-flag {
+    grid-column: span 2;
+    background:
+      radial-gradient(80% 100% at 100% 50%, rgba(16, 185, 129, 0.14) 0%, rgba(16, 185, 129, 0) 55%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%),
+      var(--surface-2);
+    padding: 44px 44px 38px;
+    min-height: 420px;
+  }
+  .ind-card.is-flag::after {
+    /* Less aggressive emerald wash so the body content has breathing room.
+       Anchored to the lower-right corner, not bleeding across the type. */
+    right: -20%; bottom: -40%;
+    width: 50%; height: 100%;
+    opacity: 0.55;
+  }
+  .ind-card.is-flag:hover {
+    background:
+      radial-gradient(80% 100% at 100% 50%, rgba(16, 185, 129, 0.22) 0%, rgba(16, 185, 129, 0) 55%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.03) 100%),
+      var(--surface-3);
+  }
+  .ind-card.is-flag .ind-card-head {
+    /* Editorial hero composition: title and blurb stacked, both left-aligned,
+       constrained max-widths so the eye doesn't have to chase across the
+       full card width. The flagship leads with a confident title block,
+       not a 2-column grid that fights the emerald wash. */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    max-width: 56ch;
+  }
+  .ind-card.is-flag .ind-card-body { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; padding-top: 32px; }
+  .ind-card.is-flag h3 {
+    font-size: clamp(2.2rem, 3.2vw, 2.8rem);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    max-width: 14ch;
+  }
+  .ind-card.is-flag .ind-card-blurb { font-size: 16px; line-height: 1.55; max-width: 56ch; }
+  @media (max-width: 1100px) {
+    .ind-card.is-flag .ind-card-head,
+    .ind-card.is-flag .ind-card-body { grid-template-columns: 1fr; gap: 24px; }
+    .ind-card.is-flag .ind-card-body { padding-top: 24px; }
+  }
+  @media (max-width: 860px) {
+    .ind-card.is-flag { grid-column: span 1; padding: 32px 28px 28px; }
+  }
+
+  .ind-card-head {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .ind-card-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fg-45);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .ind-card-eyebrow .pip {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--emerald);
+    box-shadow: 0 0 0 3px rgba(167, 243, 208, 0.16);
+    flex-shrink: 0;
+  }
+  .ind-card h3 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
+    line-height: 1.05;
+    letter-spacing: -0.038em;
+    color: var(--foreground);
+    margin: 0;
+  }
+  .ind-card-blurb {
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--fg-60);
+    margin: 0;
+    max-width: 50ch;
+  }
+
+  .ind-card-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 24px;
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+  }
+  .ind-section-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--fg-45);
+    margin: 0 0 12px;
+  }
+  .ind-challenges {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: flex; flex-direction: column;
+    gap: 8px;
+  }
+  .ind-challenges li {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--fg-80);
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .ind-challenges li::before {
+    content: '';
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--fg-45);
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+  .ind-products {
+    display: flex; flex-wrap: wrap;
+    gap: 6px;
+  }
+  .ind-product-chip {
+    display: inline-flex; align-items: center;
+    padding: 5px 11px;
+    border-radius: 9999px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--fg-80);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .ind-card-foot {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    margin-top: 4px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--fg-60);
+  }
+  .ind-card-foot .spec { color: var(--foreground); letter-spacing: 0.04em; }
+  .ind-card-cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--fg-60);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    transition: color 220ms;
+  }
+  .ind-card-cta svg { width: 12px; height: 12px; }
+  .ind-card:hover .ind-card-cta { color: var(--foreground); }
+
+  /* Background tint accent on flagship, emerald glow pulled from card vocabulary */
+  .ind-card.is-flag::after {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle at center, rgba(167, 243, 208, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .ind-card.is-flag > * { position: relative; z-index: 1; }
+</style>
+
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- =================== NAV (lifted from home, with Solutions marked active) =================== -->
+<header class="nav" id="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="wordmark" aria-label="Credify home">Credify</a>
+    <nav class="nav-links hidden md:flex" aria-label="Sections">
+      <div class="nav-dropdown" data-nav-dropdown>
+        <button type="button" class="nav-link nav-link--trigger" aria-haspopup="true" aria-expanded="false" aria-controls="services-menu">
+          Services
+          <svg class="nav-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 2l5 4 5-4"/></svg>
+        </button>
+        <div id="services-menu" class="nav-menu" role="menu" aria-label="Services">
+          <div class="nav-menu-shell">
+            <div class="nav-menu-core">
+              <div class="nav-menu-grid">
+                <div class="nav-menu-col">
+                  <div class="nav-menu-eyebrow">Working Capital</div>
+                  <a href="index.html#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 11h18"/><path d="M7 15h3"/></svg></span>
+                    <span class="nav-menu-title">Business Line of Credit</span>
+                  </a>
+                  <a href="index.html#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="16" rx="1.5"/><path d="M6 9h8M6 13h8M6 17h5"/></svg></span>
+                    <span class="nav-menu-title">AR Financing</span>
+                  </a>
+                  <a href="index.html#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/></svg></span>
+                    <span class="nav-menu-title">0% Credit Stacking</span>
+                  </a>
+                  <a href="index.html#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                    <span class="nav-menu-title">Bridge Loans</span>
+                  </a>
+                </div>
+
+                <div class="nav-menu-col">
+                  <div class="nav-menu-eyebrow">Term &amp; SBA</div>
+                  <a href="index.html#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V10l7-4 7 4v11"/><path d="M3 10h18"/></svg></span>
+                    <span class="nav-menu-title">SBA Loans</span>
+                  </a>
+                  <a href="index.html#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 5-5 4 4"/><path d="M16 7h5v5"/></svg></span>
+                    <span class="nav-menu-title">Long Term Loans</span>
+                  </a>
+                  <a href="index.html#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l3-9 6 13 4-8 5 4"/></svg></span>
+                    <span class="nav-menu-title">Short Term Loans</span>
+                  </a>
+                  <a href="index.html#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v13H4z"/><path d="M9 7V4h6v3"/><path d="M4 12h16"/></svg></span>
+                    <span class="nav-menu-title">Small Business Loans</span>
+                  </a>
+                </div>
+
+                <div class="nav-menu-col">
+                  <div class="nav-menu-eyebrow">Asset &amp; Real Estate</div>
+                  <a href="index.html#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 1 0 3 3l-3.5 3.5L11 9.8l3.7-3.5z"/><path d="M11 9.8l-7 7 3.2 3.2 7-7"/></svg></span>
+                    <span class="nav-menu-title">Equipment Financing</span>
+                  </a>
+                  <a href="index.html#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V8l7-5 7 5v13"/><path d="M5 13h14M9 21v-5h6v5"/></svg></span>
+                    <span class="nav-menu-title">Asset Based Lending</span>
+                  </a>
+                  <a href="#real-estate" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-7h6v7"/></svg></span>
+                    <span class="nav-menu-title">Commercial Real Estate</span>
+                  </a>
+                  <a href="index.html#services" class="nav-menu-item" role="menuitem">
+                    <span class="nav-menu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
+                    <span class="nav-menu-title">Personal Loans</span>
+                  </a>
+                </div>
+
+                <div class="nav-menu-help">
+                  <div class="nav-menu-help-eyebrow"><span class="pip" aria-hidden="true"></span> Not sure?</div>
+                  <h4 class="nav-menu-help-title">Let a partner pick.</h4>
+                  <p class="nav-menu-help-body">Tell us the file. We&rsquo;ll match it to the lender most likely to fund it.</p>
+                  <a href="Apply.html" class="nav-menu-help-cta">
+                    Get a custom quote
+                    <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h8"/><path d="M7.5 3l3.5 4-3.5 4"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <a href="index.html#services" class="nav-menu-foot">
+                View all financing types
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h8"/><path d="M7.5 3l3.5 4-3.5 4"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#industries"  class="nav-link">Solutions</a>
+      <a href="index.html#process"  class="nav-link">How It Works</a>
+      <a href="index.html#why"      class="nav-link">Why Credify</a>
+    </nav>
+    <a href="Apply.html" class="btn btn-outline btn-compact hero-cta-main hero-cta-main--compact">
+      <span class="cta-spark" aria-hidden="true"></span>
+      Get Started
+      <span class="btn-icon" aria-hidden="true">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8"/><path d="M7.5 3l3.5 4-3.5 4"/></svg>
+      </span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- =================== HERO =================== -->
+<section class="sol-hero" aria-labelledby="sol-hero-h1">
+  <div class="sol-hero-bg" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2400&auto=format&fit=crop" alt="" loading="eager" />
+  </div>
+  <div class="sol-hero-overlay" aria-hidden="true"></div>
+  <div class="sol-hero-fade" aria-hidden="true"></div>
+
+  <div class="wrap" style="position:relative; z-index:3;">
+    <div class="sol-hero-inner">
+      <span class="badge reveal">
+        <span class="pip" aria-hidden="true"></span>
+        Industry Solutions &middot; $100K Minimum Approval &middot; Guaranteed
+      </span>
+
+      <h1 id="sol-hero-h1" class="sol-hero-h1 reveal">
+        Capital built for <em>your</em> industry.
+      </h1>
+
+      <p class="sol-hero-sub reveal">
+        Every sector has a different funding playbook. Banks run one model for all of them. We&rsquo;ve placed $840M across 12 industry verticals. Every operator got denied somewhere else first.
+      </p>
+
+      <div class="sol-hero-ctas reveal">
+        <a href="Apply.html" class="btn btn-outline btn-hero hero-cta-main">
+          <span class="cta-spark" aria-hidden="true"></span>
+          Get Your Custom Quote
+          <span class="btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10"/><path d="M9 3l4 5-4 5"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 3-UP VALUE TRAY =================== -->
+<div class="value-tray reveal">
+  <div class="value-tray-inner">
+    <div class="value-cell">
+      <span class="value-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+      </span>
+      <span class="value-title">Industry-specific rates</span>
+      <p class="value-desc">Pricing tuned to your sector&rsquo;s risk profile, not a one-size-fits-all spread.</p>
+    </div>
+    <div class="value-cell">
+      <span class="value-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+      </span>
+      <span class="value-title">Fast approvals</span>
+      <p class="value-desc">Streamlined files routed to lenders who already know your industry&rsquo;s nuances.</p>
+    </div>
+    <div class="value-cell">
+      <span class="value-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+      </span>
+      <span class="value-title">Expert guidance</span>
+      <p class="value-desc">Advisors with deep industry knowledge match your file to the right capital.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =================== INDUSTRY ANCHOR RAIL =================== -->
+<div class="ind-rail" role="navigation" aria-label="Jump to industry">
+  <div class="ind-rail-inner">
+    <span class="ind-rail-label">Jump to</span>
+    <a href="#real-estate" class="ind-rail-link">Real Estate</a>
+    <a href="#construction" class="ind-rail-link">Construction</a>
+    <a href="#healthcare" class="ind-rail-link">Healthcare</a>
+    <a href="#retail" class="ind-rail-link">Retail</a>
+    <a href="#restaurants" class="ind-rail-link">Restaurants</a>
+    <a href="#trucking" class="ind-rail-link">Trucking</a>
+    <a href="#manufacturing" class="ind-rail-link">Manufacturing</a>
+    <a href="#home-services" class="ind-rail-link">Home Services</a>
+    <a href="#professional" class="ind-rail-link">Professional Services</a>
+  </div>
+</div>
+
+<!-- =================== INDUSTRIES =================== -->
+<section id="industries" class="sec industries-section" aria-labelledby="industries-h2">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <span class="eyebrow-pill"><span class="pip" aria-hidden="true"></span> Industries We Serve</span>
+        <h2 id="industries-h2" class="sec-h2">Tailored capital for <em>every</em> sector.</h2>
+      </div>
+      <p class="sub">
+        Each industry below has its own underwriting playbook on our side. Pick yours to see the challenges we hear about most often and the products that solve them.
+      </p>
+    </div>
+
+    <div class="ind-grid reveal">
+
+      <!-- ============ REAL ESTATE (FLAGSHIP, spans 2 cols) ============ -->
+      <article id="real-estate" class="ind-card is-flag">
+        <div class="ind-card-head">
+          <div>
+            <div class="ind-card-eyebrow"><span class="pip" aria-hidden="true"></span>Flagship Sector</div>
+            <h3>Real Estate</h3>
+          </div>
+          <p class="ind-card-blurb">
+            Investors and property managers need flexible capital for acquisitions, renovations, and portfolio growth. We connect you with specialized lenders who price by the asset, not the algorithm. Bridge structures close in days, not months.
+          </p>
+        </div>
+        <div class="ind-card-body">
+          <div>
+            <p class="ind-section-label">Common Challenges</p>
+            <ul class="ind-challenges">
+              <li>Property acquisition and fix-and-flip projects</li>
+              <li>Commercial real estate investments</li>
+              <li>Renovation and construction costs</li>
+              <li>Portfolio leverage when banks pull lines</li>
+            </ul>
+          </div>
+          <div>
+            <p class="ind-section-label">Recommended Products</p>
+            <div class="ind-products">
+              <span class="ind-product-chip">Bridge Loans</span>
+              <span class="ind-product-chip">Commercial Real Estate</span>
+              <span class="ind-product-chip">Line of Credit</span>
+              <span class="ind-product-chip">SBA Loans</span>
+              <span class="ind-product-chip">Asset Based Lending</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-card-foot">
+          <span class="spec">Same-week close &middot; $250K to $25M</span>
+          </div>
+      </article>
+
+      <!-- ============ CONSTRUCTION ============ -->
+      <article id="construction" class="ind-card">
+        <div class="ind-card-head">
+          <div class="ind-card-eyebrow"><span class="pip" aria-hidden="true"></span>Sector 02</div>
+          <h3>Construction</h3>
+          <p class="ind-card-blurb">From equipment purchases to project financing, we help construction companies secure the capital to take on bigger jobs and grow their fleet.</p>
+        </div>
+        <div class="ind-card-body">
+          <div>
+            <p class="ind-section-label">Common Challenges</p>
+            <ul class="ind-challenges">
+              <li>Equipment purchases and heavy machinery financing</li>
+              <li>Project-based working capital for materials and labor</li>
+              <li>Seasonal cash flow management</li>
+            </ul>
+          </div>
+          <div>
+            <p class="ind-section-label">Recommended Products</p>
+            <div class="ind-products">
+              <span class="ind-product-chip">Equipment Financing</span>
+              <span class="ind-product-chip">Line of Credit</span>
+              <span class="ind-product-chip">SBA Loans</span>
+              <span class="ind-product-chip">Bridge Loans</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-card-foot">
+          <span class="spec">$100K to $5M</span>
+          </div>
+      </article>
+
+      <!-- ============ HEALTHCARE ============ -->
+      <article id="healthcare" class="ind-card">
+        <div class="ind-card-head">
+          <div class="ind-card-eyebrow"><span class="pip" aria-hidden="true"></span>Sector 03</div>
+          <h3>Healthcare</h3>
+          <p class="ind-card-blurb">Practices, clinics, and healthcare companies face funding challenges most lenders misread. We connect you with capital that understands the reimbursement cycle.</p>
+        </div>
+        <div class="ind-card-body">
+          <div>
+            <p class="ind-section-label">Common Challenges</p>
+            <ul class="ind-challenges">
+              <li>Medical equipment and technology upgrades</li>
+              <li>Practice expansion and new locations</li>
+              <li>Insurance reimbursement cash flow gaps</li>
+            </ul>
+          </div>
+          <div>
+            <p class="ind-section-label">Recommended Products</p>
+            <div class="ind-products">
+              <span class="ind-product-chip">AR Financing</span>
+              <span class="ind-product-chip">Equipment Financing</span>
+              <span class="ind-product-chip">Small Business Loans</span>
+              <span class="ind-product-chip">Line of Credit</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-card-foot">
+          <span class="spec">$100K to $3M</span>
+          </div>
+      </article>
+
+      <!-- ============ RETAIL ============ -->
+      <article id="retail" class="ind-card">
+        <div class="ind-card-head">
+          <div class="ind-card-eyebrow"><span class="pip" aria-hidden="true"></span>Sector 04</div>
+          <h3>Retail</h3>
+          <p class="ind-card-blurb">Whether brick-and-mortar or e-commerce, we help retail operators manage inventory, expand locations, and time cash flow against seasonality.</p>
+        </div>
+        <div class="ind-card-body">
+          <div>
+            <p class="ind-section-label">Common Challenges</p>
+            <ul class="ind-challenges">
+              <li>Inventory purchasing and seasonal stocking</li>
+              <li>Store expansion and renovation</li>
+              <li>E-commerce platform and ad-spend investment</li>
+            </ul>
+          </div>
+          <div>
+            <p class="ind-section-label">Recommended Products</p>
+            <div class="ind-products">
+              <span class="ind-product-chip">Line of Credit</span>
+              <span class="ind-product-chip">Small Business Loans</span>
+              <span class="ind-product-chip">Short Term Loans</span>
+              <span class="ind-product-chip">SBA Loans</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-card-foot">
+          <span class="spec">$100K to $2M</span>
+          </div>
+      </article>
+
+      <!-- ============ RESTAURANTS ============ -->
+      <article id="restaurants" class="ind-card">
+        <div class="ind-card-head">
+          <div class="ind-card-eyebrow"><span class="pip" aria-hidden="true"></span>Sector 05</div>
+          <h3>Restaurants</h3>
+          <p class="ind-card-blurb">Tight margins and high upfront costs put restaurant files in the &ldquo;too risky&rdquo; pile. Our partners read the operator, not the spreadsheet.</p>
+        </div>
+        <div class="ind-card-body">
+          <div>
+            <p class="ind-section-label">Common Challenges</p>
+            <ul class="ind-challenges">
+              <li>Kitchen equipment and renovation</li>
+              <li>New location build-outs</li>
+              <li>Seasonal staffing and payroll</li>
+            </ul>
+          </div>
+          <div>
+            <p class="ind-section-label">Recommended Products</p>
+            <div class="ind-products">
+              <span class="ind-product-chip">Equipment Financing</span>
+              <span class="ind-product-chip">Small Business Loans</span>
+              <span class="ind-product-chip">Line of Credit</span>
+              <span class="ind-product-chip">Short Term Loans</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-card-foot">
+          <span class="spec">$100K to $1.5M</span>
+          </div>
+      </article>
+
+      <!-- ============ TRUCKING ============ -->
+      <article id="trucking" class="ind-card">
+        <div class="ind-card-head">
+          <div class="ind-card-eyebrow"><span class="pip" aria-hidden="true"></span>Sector 06</div>
+          <h3>Trucking &amp; Logistics</h3>
+          <p class="ind-card-blurb">Fleet expansion, fuel, and freight invoices move on a different clock than bank approvals. We work with capital that rides along.</p>
+        </div>
+        <div class="ind-card-body">
+          <div>
+            <p class="ind-section-label">Common Challenges</p>
+            <ul class="ind-challenges">
+              <li>Fleet expansion and vehicle purchases</li>
+              <li>Fuel costs and maintenance expenses</li>
+              <li>AR factoring for freight invoices</li>
+            </ul>
+          </div>
+          <div>
+            <p class="ind-section-label">Recommended Products</p>
+            <div class="ind-products">
+              <span class="ind-product-chip">Equipment Financing</span>
+              <span class="ind-product-chip">AR Financing</span>
+              <span class="ind-product-chip">Line of Credit</span>
+              <span class="ind-product-chip">Bridge Loans</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-card-foot">
+          <span class="spec">$100K to $4M</span>
+          </div>
+      </article>
+
+      <!-- ============ MANUFACTURING ============ -->
+      <article id="manufacturing" class="ind-card">
+        <div class="ind-card-head">
+          <div class="ind-card-eyebrow"><span class="pip" aria-hidden="true"></span>Sector 07</div>
+          <h3>Manufacturing</h3>
+          <p class="ind-card-blurb">Heavy capital needs against long supply-chain timelines. We place files where the lender accounts for the whole production cycle.</p>
+        </div>
+        <div class="ind-card-body">
+          <div>
+            <p class="ind-section-label">Common Challenges</p>
+            <ul class="ind-challenges">
+              <li>Heavy equipment and machinery purchases</li>
+              <li>Raw material and supply chain financing</li>
+              <li>Facility expansion and upgrades</li>
+            </ul>
+          </div>
+          <div>
+            <p class="ind-section-label">Recommended Products</p>
+            <div class="ind-products">
+              <span class="ind-product-chip">Equipment Financing</span>
+              <span class="ind-product-chip">SBA Loans</span>
+              <span class="ind-product-chip">Line of Credit</span>
+              <span class="ind-product-chip">AR Financing</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-card-foot">
+          <span class="spec">$250K to $10M</span>
+          </div>
+      </article>
+
+      <!-- ============ HOME SERVICES ============ -->
+      <article id="home-services" class="ind-card">
+        <div class="ind-card-head">
+          <div class="ind-card-eyebrow"><span class="pip" aria-hidden="true"></span>Sector 08</div>
+          <h3>Home Services</h3>
+          <p class="ind-card-blurb">HVAC, plumbing, electrical, landscaping. Service-based businesses need capital for trucks, tools, and technicians on a monthly cadence.</p>
+        </div>
+        <div class="ind-card-body">
+          <div>
+            <p class="ind-section-label">Common Challenges</p>
+            <ul class="ind-challenges">
+              <li>Service vehicle fleet management</li>
+              <li>Equipment and tool purchases</li>
+              <li>Technician hiring and training</li>
+            </ul>
+          </div>
+          <div>
+            <p class="ind-section-label">Recommended Products</p>
+            <div class="ind-products">
+              <span class="ind-product-chip">Equipment Financing</span>
+              <span class="ind-product-chip">Line of Credit</span>
+              <span class="ind-product-chip">Small Business Loans</span>
+              <span class="ind-product-chip">Short Term Loans</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-card-foot">
+          <span class="spec">$100K to $2M</span>
+          </div>
+      </article>
+
+      <!-- ============ PROFESSIONAL SERVICES ============ -->
+      <article id="professional" class="ind-card">
+        <div class="ind-card-head">
+          <div class="ind-card-eyebrow"><span class="pip" aria-hidden="true"></span>Sector 09</div>
+          <h3>Professional Services</h3>
+          <p class="ind-card-blurb">Law, accounting, consulting. Capital for talent, technology, and the buildouts that come with growth.</p>
+        </div>
+        <div class="ind-card-body">
+          <div>
+            <p class="ind-section-label">Common Challenges</p>
+            <ul class="ind-challenges">
+              <li>Technology and software investments</li>
+              <li>Office expansion and buildout</li>
+              <li>Talent acquisition and retention</li>
+            </ul>
+          </div>
+          <div>
+            <p class="ind-section-label">Recommended Products</p>
+            <div class="ind-products">
+              <span class="ind-product-chip">Line of Credit</span>
+              <span class="ind-product-chip">Small Business Loans</span>
+              <span class="ind-product-chip">SBA Loans</span>
+              <span class="ind-product-chip">Short Term Loans</span>
+            </div>
+          </div>
+        </div>
+        <div class="ind-card-foot">
+          <span class="spec">$100K to $3M</span>
+          </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================== APPLY BANNER (closing CTA) =================== -->
+<section id="apply" class="apply-banner" aria-labelledby="apply-h2">
+  <div class="apply-banner-bg" aria-hidden="true"></div>
+  <div class="apply-banner-inner reveal">
+    <span class="eyebrow-pill apply-banner-eyebrow"><span class="pip" aria-hidden="true"></span> Don&rsquo;t see your industry?</span>
+    <h2 id="apply-h2" class="apply-banner-h2">We work with operators in <em>every</em> sector.</h2>
+    <p class="apply-banner-sub">
+      If your industry isn&rsquo;t listed, that just means we haven&rsquo;t written the page yet. Send the file. We&rsquo;ll match it to a lender who funds it.
+    </p>
+    <a href="Apply.html" class="btn btn-outline btn-hero hero-cta-main apply-banner-cta">
+      <span class="cta-spark" aria-hidden="true"></span>
+      Start Your Application
+      <span class="btn-icon" aria-hidden="true">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10"/><path d="M9 3l4 5-4 5"/></svg>
+      </span>
+    </a>
+    <p class="cta-microcopy apply-banner-microcopy">
+      <span class="cta-pip" aria-hidden="true"></span>
+      60-second reply &middot; No credit pull &middot; $100K minimum, guaranteed
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer-stage">
+  <div class="footer-mark-bg" aria-hidden="true">
+    <span class="footer-mark-glow"></span>
+    <span class="footer-mark-text">Credify</span>
+  </div>
+  <div class="wrap footer-stage-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="wordmark" style="font-size:24px;">Credify</div>
+        <p class="footer-tagline">Making the impossible possible. $100K minimum approval, guaranteed. The capital firm for operators denied everywhere else.</p>
+        <span class="footer-status"><span class="footer-pip" aria-hidden="true"></span> Desk Open &middot; Replying Now</span>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Company</div>
+        <a href="index.html#services" class="footer-link">Services</a>
+        <a href="#industries" class="footer-link">Solutions</a>
+        <a href="index.html#process"  class="footer-link">How It Works</a>
+        <a href="index.html#why"      class="footer-link">Why Credify</a>
+      </div>
+      <div class="footer-col footer-col--services-wide">
+        <div class="footer-col-label">Industries</div>
+        <div class="footer-link-grid">
+          <a href="#real-estate" class="footer-link">Real Estate</a>
+          <a href="#construction" class="footer-link">Construction</a>
+          <a href="#healthcare" class="footer-link">Healthcare</a>
+          <a href="#retail" class="footer-link">Retail</a>
+          <a href="#restaurants" class="footer-link">Restaurants</a>
+          <a href="#trucking" class="footer-link">Trucking</a>
+          <a href="#manufacturing" class="footer-link">Manufacturing</a>
+          <a href="#home-services" class="footer-link">Home Services</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-label">Connect</div>
+        <a href="mailto:Fund@getcredify.io" class="footer-link">Fund@getcredify.io</a>
+        <a href="Apply.html" class="footer-link">Start Application</a>
+        <a href="Apply.html" class="footer-link">Get Custom Quote</a>
+      </div>
+    </div>
+
+    <div class="footer-rule"></div>
+
+    <div class="flex items-center justify-between footer-fine" style="gap:20px; flex-wrap:wrap;">
+      <span>&copy; MMXXVI Credify / Fund@getcredify.io</span>
+      <span>Credify is a capital advisory desk. Not a direct lender.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ---------- Services dropdown (mirrors home behaviour) ----------
+    document.querySelectorAll('[data-nav-dropdown]').forEach(dd => {
+      const trigger = dd.querySelector('.nav-link--trigger');
+      const menu = dd.querySelector('.nav-menu');
+      if (!trigger || !menu) return;
+
+      let openTimer, closeTimer;
+      const open = () => {
+        clearTimeout(closeTimer);
+        trigger.setAttribute('aria-expanded', 'true');
+        dd.classList.add('is-open');
+      };
+      const close = () => {
+        clearTimeout(openTimer);
+        trigger.setAttribute('aria-expanded', 'false');
+        dd.classList.remove('is-open');
+      };
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const expanded = trigger.getAttribute('aria-expanded') === 'true';
+        expanded ? close() : open();
+      });
+      dd.addEventListener('mouseenter', () => { openTimer = setTimeout(open, 60); });
+      dd.addEventListener('mouseleave', () => { closeTimer = setTimeout(close, 140); });
+      document.addEventListener('click', (e) => { if (!dd.contains(e.target)) close(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    });
+
+    // ---------- Sticky nav background on scroll ----------
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      if (!nav) return;
+      if (window.scrollY > 24) nav.classList.add('is-stuck');
+      else nav.classList.remove('is-stuck');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // ---------- Reveal-on-scroll (matches home, adds .is-in) ----------
+    if (!reduce && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in'));
+    }
+
+    // ---------- Industry rail: highlight active section + smooth scroll offset ----------
+    const railLinks = Array.from(document.querySelectorAll('.ind-rail-link'));
+    const cards = railLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+    if ('IntersectionObserver' in window && cards.length) {
+      const setActive = (id) => {
+        railLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+      };
+      const railIO = new IntersectionObserver((entries) => {
+        // pick the entry closest to the top of the viewport that is visible
+        const visible = entries.filter(e => e.isIntersecting);
+        if (!visible.length) return;
+        visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        setActive(visible[0].target.id);
+      }, { threshold: 0, rootMargin: '-180px 0px -60% 0px' });
+      cards.forEach(c => railIO.observe(c));
+    }
+
+  })();
+</script>
+
+</body>
+</html>
