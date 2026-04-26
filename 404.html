@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Credify // Page not found</title>
+<meta name="description" content="That page does not exist. Head back to the homepage or talk to a partner." />
+<meta name="theme-color" content="#000000" />
+<meta name="robots" content="noindex" />
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23000000'/><text x='50%25' y='58%25' text-anchor='middle' font-family='system-ui, sans-serif' font-size='36' font-weight='800' fill='%23ffffff' dominant-baseline='middle'>C</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="/styles/credify.css" />
+
+<style>
+  html, body { background: #000; color: #fff; min-height: 100vh; }
+  .nf-wrap {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 48px 24px;
+    text-align: center;
+  }
+  .nf-inner { max-width: 640px; }
+  .nf-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 999px;
+    font-family: "Geist Mono", ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.72);
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(8px);
+  }
+  .nf-eyebrow .pip {
+    width: 6px; height: 6px; border-radius: 999px;
+    background: #34d399;
+    box-shadow: 0 0 12px rgba(52,211,153,0.7);
+  }
+  .nf-h1 {
+    font-family: "Geist", system-ui, sans-serif;
+    font-size: clamp(48px, 9vw, 96px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+    margin: 24px 0 12px;
+  }
+  .nf-h1 em { font-style: italic; font-weight: 500; color: rgba(255,255,255,0.72); }
+  .nf-sub {
+    font-family: "Geist", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.68);
+    margin: 0 0 32px;
+  }
+  .nf-actions {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  .nf-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-family: "Geist", system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+  }
+  .nf-btn-primary {
+    color: #000;
+    background: #fff;
+    border: 1px solid #fff;
+  }
+  .nf-btn-primary:hover { transform: translateY(-1px); }
+  .nf-btn-ghost {
+    color: #fff;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .nf-btn-ghost:hover { border-color: rgba(255,255,255,0.36); transform: translateY(-1px); }
+</style>
+</head>
+<body>
+
+<main class="nf-wrap">
+  <div class="nf-inner">
+    <span class="nf-eyebrow"><span class="pip"></span> 404, Not found</span>
+    <h1 class="nf-h1">Wrong door.<br /><em>Right idea.</em></h1>
+    <p class="nf-sub">
+      The page you tried to open does not exist. If you were heading somewhere specific, the homepage will get you there. If you wanted to talk to us, the call button is one click away.
+    </p>
+    <div class="nf-actions">
+      <a class="nf-btn nf-btn-primary" href="/">Back to home</a>
+      <a class="nf-btn nf-btn-ghost" href="/apply/">Book a strategy call</a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
